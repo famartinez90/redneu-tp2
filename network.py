@@ -18,7 +18,7 @@ class UnsupervisedLearningNetwork(object):
                 for n_neurona in range(len(self.pesos_red)):
 
                     salida_neurona = self.neuron_output(n_neurona, fila)
-                    self.pesos_red[n_neurona]['pesos'] = self.weight_update_hebbian(n_neurona, salida_neurona, eta)
+                    self.pesos_red[n_neurona]['pesos'] = self.weight_update_hebbian(fila, salida_neurona, eta)
                     print salida_neurona
         
         return self
@@ -26,10 +26,10 @@ class UnsupervisedLearningNetwork(object):
     def neuron_output(self, neurona, entrada_neurona):
         return np.dot(entrada_neurona, self.pesos_red[neurona]['pesos'])
 
-    def weight_update_hebbian(self, neurona, salida_neurona, eta):
+    def weight_update_hebbian(self, entrada_neurona, salida_neurona, eta):
         updated = list()
 
-        for _, peso in enumerate(self.pesos_red[neurona]['pesos']):
-            updated.append(eta * peso * salida_neurona) 
+        for _, entrada in enumerate(entrada_neurona):
+            updated.append(eta * entrada * salida_neurona) 
 
         return updated
