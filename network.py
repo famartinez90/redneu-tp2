@@ -40,7 +40,7 @@ class UnsupervisedLearningNetwork(object):
                         delta_w.append(eta * (entrada - x) * salida_neurona)
 
                     self.pesos_red[n_neurona]['pesos'] = np.sum([self.pesos_red[n_neurona]['pesos'], delta_w], axis=0)
-                    # print salida_neurona
+                    print salida_neurona
         
         return self
 
@@ -55,4 +55,4 @@ class UnsupervisedLearningNetwork(object):
             return len(self.pesos_red)
         
         if algoritmo == "sanger":
-            return neurona_actual
+            return neurona_actual+1
