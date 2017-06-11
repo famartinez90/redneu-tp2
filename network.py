@@ -9,7 +9,7 @@ class UnsupervisedLearningNetwork(object):
         for _ in range(n_salida):
             self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
-    def train(self, dataset, eta=0.05, epochs=10, algoritmo="hebb"):
+    def train(self, dataset, eta=0.05, epochs=100, algoritmo="hebb"):
 
         # for X en D:
         #     Y = X . W

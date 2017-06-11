@@ -8,4 +8,4 @@ N_ENTRADA = 3
 N_SALIDA = 1
 
 PPN = ppn.UnsupervisedLearningNetwork(N_ENTRADA, N_SALIDA)
-PPN.train([[30, 11, 22]])
+PPN.train([[0.5, 0.3, 0.7]], algoritmo="hebb")
