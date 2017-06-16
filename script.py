@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
+import csv
 import network as ppn
-import matplotlib.pyplot as plt
 
-######### INICIO SCRIPT ##############
+######### PARSEO DE DATOS ##############
 
-N_ENTRADA = 3
-N_SALIDA = 1
+f = open('tp2_training_dataset.csv', 'rb')
+reader = csv.reader(f)
+categorias_verificacion = []
+atributos = []
 
-PPN = ppn.UnsupervisedLearningNetwork(N_ENTRADA, N_SALIDA)
-PPN.train([[0.5, 0.3, 0.7]], algoritmo="hebb")
+for row in reader:
+    categoria = float(row.pop(0))
+    categorias_verificacion.append(categoria)
+    atributos.append([float(x) for x in row])
+
+f.close()
+
+######### TRAINING ##############
+
+n_entrada = 850
+n_salida = 3
+
+PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
+PPN.train(atributos, algoritmo="oja")

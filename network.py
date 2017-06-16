@@ -9,7 +9,7 @@ class UnsupervisedLearningNetwork(object):
         for _ in range(n_salida):
             self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
-    def train(self, dataset, eta=0.05, epochs=100, algoritmo="hebb"):
+    def train(self, dataset, eta=0.0005, epochs=10, algoritmo="hebb"):
 
         # for X en D:
         #     Y = X . W
@@ -29,6 +29,8 @@ class UnsupervisedLearningNetwork(object):
                 for n_neurona in range(len(self.pesos_red)):
                     salida_neurona = np.dot(fila, self.pesos_red[n_neurona]['pesos'])
                     y.append(salida_neurona)
+
+                for n_neurona in range(len(self.pesos_red)):                    
                     delta_w = list()
                     
                     for i, entrada in enumerate(fila):
@@ -39,6 +41,8 @@ class UnsupervisedLearningNetwork(object):
 
                         delta_w.append(eta * (entrada - x) * salida_neurona)
 
+                    # Calculo que si es aprendizaje competitivo aca habria que ver a la neurona ganadora
+                    # y solo actualizar los pesos que van a esa ganadora
                     self.pesos_red[n_neurona]['pesos'] = np.sum([self.pesos_red[n_neurona]['pesos'], delta_w], axis=0)
                     print salida_neurona
         
