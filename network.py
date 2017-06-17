@@ -26,6 +26,8 @@ class UnsupervisedLearningNetwork(object):
             for _, fila in enumerate(dataset):
                 y = list()
 
+                # Recorro las neuronas de salida 2 veces porque necesito tener
+                # calculadas las salidas de las mismas para hacer OJA
                 for n_neurona in range(len(self.pesos_red)):
                     salida_neurona = np.dot(fila, self.pesos_red[n_neurona]['pesos'])
                     y.append(salida_neurona)
