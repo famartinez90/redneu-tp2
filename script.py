@@ -29,7 +29,11 @@ for i, mean in enumerate(column_means):
     for j, _ in enumerate(matrix):
         matrix[j][i] = matrix[j][i] - mean
 
-# random.shuffle(matrix)
+rnd_state = np.random.get_state()
+np.random.shuffle(matrix)
+np.random.set_state(rnd_state)
+np.random.shuffle(categorias_verificacion)
+
 
 dataset_train = matrix[:int(len(matrix) * 0.9)]
 dataset_validation = matrix[int(len(matrix) * 0.9):]
