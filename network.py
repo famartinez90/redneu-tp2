@@ -9,7 +9,7 @@ class UnsupervisedLearningNetwork(object):
         for _ in range(n_salida):
             self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
-    def train(self, dataset, eta=0.0005, epochs=10, algoritmo="hebb"):
+    def train_ej1(self, dataset, eta=0.01, epochs=10, algoritmo="sanger"):
 
         # for X en D:
         #     Y = X . W
@@ -21,34 +21,47 @@ class UnsupervisedLearningNetwork(object):
         #             DeltaW_ij = eta . (X_i - X~_i) . Y_j
         #     W += DeltaW
 
-        for _ in range(epochs):
+        for ep in range(epochs):
             
-            for _, fila in enumerate(dataset):
+            for _, documento in enumerate(dataset):
                 y = list()
 
                 # Recorro las neuronas de salida 2 veces porque necesito tener
-                # calculadas las salidas de las mismas para hacer OJA
+                # calculadas las salidas de las mismas para hacer Oja
                 for n_neurona in range(len(self.pesos_red)):
-                    salida_neurona = np.dot(fila, self.pesos_red[n_neurona]['pesos'])
+                    salida_neurona = np.dot(documento, self.pesos_red[n_neurona]['pesos'])
                     y.append(salida_neurona)
 
-                for n_neurona in range(len(self.pesos_red)):                    
+                # Para todas las neuronas de salida, se actualizan los pesos de
+                # las 850 entradas para cada documento
+                for n_neurona in range(len(self.pesos_red)):           
                     delta_w = list()
                     
-                    for i, entrada in enumerate(fila):
+                    for i, atributo in enumerate(documento):
                         x = 0
 
+                        # Las salidas utilizadas para actualizar los pesos dependen
+                        # de si se usa Oja o Sanger
                         for k in range(self.calcular_intervalo(algoritmo, n_neurona)):
                             x += y[k] * self.pesos_red[k]['pesos'][i]
 
-                        delta_w.append(eta * (entrada - x) * salida_neurona)
+                        delta_w.append(eta * (atributo - x) * salida_neurona)
 
-                    # Calculo que si es aprendizaje competitivo aca habria que ver a la neurona ganadora
-                    # y solo actualizar los pesos que van a esa ganadora
+                    # Actualizacion de los pesos
                     self.pesos_red[n_neurona]['pesos'] = np.sum([self.pesos_red[n_neurona]['pesos'], delta_w], axis=0)
-                    print salida_neurona
-        
+            
+            print 'Finalizada epoca '+str(ep)
+
         return self
+
+    def predict_coordenadas_ej1(self, documento):
+        coordenadas = list()
+
+        for n_neurona in range(len(self.pesos_red)):
+            salida_neurona = np.dot(documento, self.pesos_red[n_neurona]['pesos'])
+            coordenadas.append(salida_neurona)
+
+        return coordenadas
 
     def calcular_intervalo(self, algoritmo, neurona_actual):
         if algoritmo == "hebb":
