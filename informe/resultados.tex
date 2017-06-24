@@ -9,13 +9,16 @@ Presentamos en primer lugar los resultados obtenidos del problema de reducción 
 
 \subsection{Ejercicio 1 - Reducción de dimensiones}
 
-Para el primer ejercicio, los experimentos consistieron en variar la cantidad de épocas, la regla de aprendizaje y la cantidad de dimensiones de salida.
+Para el primer ejercicio, los experimentos consistieron en variar la cantidad de épocas, la regla de aprendizaje y la cantidad de dimensiones de salida. Intentamos variar estos factores y observar diferencias en los gráficos 3D generados en base a las nuevas dimensiones.\\
 
 Comenzamos realizando clasificaciones con 100 épocas. Al obtener resultados imprecisos subimos la cantidad a 200. Allí observamos una clasificación mejor, más marcada la separación geométrica entre los distintos clusters.\\
 
+Luego comparamos los resultados obtenidos entre las distintas reglas. Repetimos las ejecuciones variando la regla entre Oja y Sanger para comprobar su eficacia.\\
+
+Por último, decidimos cambiar la cantidad de dimensiones de sálida, esperando una mejora en las clasificaciones. 
 
 \subsubsection{Regla de Oja - 200 épocas}
-En los primeros experimentos, fuimos probando la calidad de la clasificación utilizando 
+En los primeros experimentos, fuimos probando la calidad de la clasificación utilizando solamente 100 épocas. La decisión se basó en un tema de performance de la red. Cada ejecución tenía una cierta demora, por lo que empezamos probando con pocas épocas. Mostramos los primeros resultados que obtuvimos, utilizando la regla de Oja:
 
 \begin{figure}[h]
   \begin{center}

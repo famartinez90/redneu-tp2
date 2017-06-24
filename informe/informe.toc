@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {1.5}Archivos}{3}{subsection.1.5}
 \contentsline {section}{\numberline {2}Resultados}{5}{section.2}
 \contentsline {subsection}{\numberline {2.1}Ejercicio 1 - Reducci\IeC {\'o}n de dimensiones}{5}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Primeros experimentos}{5}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Regla de Oja - 200 \IeC {\'e}pocas}{5}{subsubsection.2.1.1}
 \contentsline {subsection}{\numberline {2.2}Ejercicio 2}{6}{subsection.2.2}
 \contentsline {section}{\numberline {3}Soluciones \IeC {\'O}ptimas Propuestas}{7}{section.3}
 \contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{7}{section.4}
