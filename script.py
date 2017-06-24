@@ -44,7 +44,7 @@ n_entrada = len(atributos[0])
 n_salida = 3
 
 PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
-PPN.train_ej1(dataset_train, algoritmo="sanger", epochs=50)
+PPN.train_ej1(dataset_train, algoritmo="oja", epochs=100)
 
 ######## OBTENCION COORDENADAS ##############
 
@@ -60,6 +60,24 @@ ax.scatter(
     [vector[1] for vector in coordenadas], 
     [vector[2] for vector in coordenadas], 
     c=categorias_verificacion[:int(len(categorias_verificacion) * 0.9)]
+)
+
+plt.show()
+
+# Para datos de validacion
+
+coordenadas = []
+
+for documento in dataset_validation:
+    coordenadas.append(PPN.predict_coordenadas_ej1(documento))
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(
+    [vector[0] for vector in coordenadas], 
+    [vector[1] for vector in coordenadas], 
+    [vector[2] for vector in coordenadas], 
+    c=categorias_verificacion[int(len(categorias_verificacion) * 0.9):]
 )
 
 plt.show()
