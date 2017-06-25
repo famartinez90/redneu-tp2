@@ -44,7 +44,7 @@ n_entrada = len(atributos[0])
 n_salida = 3
 
 PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
-PPN.train_ej1(dataset_train, algoritmo="oja", epochs=100)
+PPN.train_ej1(dataset_train, algoritmo="sanger", epochs=200)
 
 ######## OBTENCION COORDENADAS ##############
 
