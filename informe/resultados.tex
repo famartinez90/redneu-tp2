@@ -149,48 +149,49 @@ se obtienen mejores resultados variando el número de épocas.
 
 En primer lugar, resultados con 100 épocas:
 
+\newpage
+
 \begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_train.png}
-  \caption{Oja - 3 dimensiones - 100 épocas}
+  \caption{Sanger - 3 dimensiones - 100 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_train_3.png}
-  \caption{Oja - 3 dimensiones - 100 épocas}
+  \caption{Sanger - 3 dimensiones - 100 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
 
-\newpage
-
 \begin{figure}[h]
   \begin{center}
     \includegraphics[scale=0.45]{../img/ej1/sanger/sanger_3salida_100ep_train_2.png}
-  \caption{Oja - 3 dimensiones - 100 épocas - Datos Entrenamiento}
+  \caption{Sanger - 3 dimensiones - 100 épocas - Datos Entrenamiento}
   \end{center}
 \end{figure}
 
-Éstos son los gráficos de las ejecuciones utilizando regla de Oja, con 100 épocas. Notamos que se están comenzando a formar
-clusters de clasificación con distintos colores, pero que también hay mucho solapamiento en la parte central de cada vista.\\
+Éstos son los resultados de las ejecuciones utilizando regla de Sanger, con 100 épocas. Notamos un gran nivel de dispersión y 
+solapamiento entre las categorías. No tienen la calidad que esperábamos.
 
-Luego de esta etapa de entrenamiento, procesamos los datos de validación:
+Luego de esta etapa de entrenamiento, procesamos los datos de validación. No obtuvimos buenos resultados, las marcas están 
+medianamente agrupadas pero con alto nivel de disgregación.
 
 \begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation_3.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
@@ -198,52 +199,45 @@ Luego de esta etapa de entrenamiento, procesamos los datos de validación:
 \begin{figure}[h]
   \begin{center}
     \includegraphics[scale=0.65]{../img/ej1/sanger/sanger_3salida_100ep_validation_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
+  \caption{Sanger - 3 dimensiones - 200 épocas - Datos Validación}
   \end{center}
 \end{figure}
 
 \newpage
 
-Para los datos de validación vemos una dispersión muy grande. Se notan algunos puntos del mismo color agrupados levemente cerca, pero lejos
-de formar una división clara.\\
+Para los datos de validación vemos, que al igual que en Oja, los resultados con solo 100 épocas no son los mejores.
 
 Observemos a continuación las mismas ejecuciones, pero subiendo el número de épocas a 200:
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.75]{../img/ej1/sanger/sanger_3salida_200ep_train_2.png}
+  \caption{Sanger - 3 dimensiones - 200 épocas - Datos Validación}
+  \end{center}
+\end{figure}
+
+\newpage
 
 \begin{figure}[!htbp]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_3.png}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
-\begin{figure}[!htbp]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_3.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
-  \label{fig:sub3}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_4.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
-  \label{fig:sub4}
-\end{subfigure}
-\end{figure}
 
-En los datos de entrenamiento se observa que con 200 épocas se empiezana notar más visiblemente
-los clusters de datos. Se observa una leve mejora en la clasificación con respecto a la versión de 100 épocas.
+En los datos de entrenamiento observamos que con 200 épocas los clusters de datos se encuentran un poco más definidos. 
+Se observa una notable mejora en la clasificación con respecto a la versión anterior de 100 épocas.
 
-Podemos ver de todas formas que algunas de las categorías se encuentran mezcladas entre sí mientras otras están más claramente divididas.
+Podemos ver de todas formas que algunas de las categorías presentan alto nivel de solapamiento.
 
 A continuación los datos de validation.
 
@@ -252,25 +246,33 @@ A continuación los datos de validation.
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_validation.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_validation_3.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 200 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.65]{../img/ej1/sanger/sanger_3salida_200ep_validation_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
+    \includegraphics[scale=0.4]{../img/ej1/sanger/sanger_3salida_200ep_validation_2.png}
+  \caption{Sanger - 3 dimensiones - 200 épocas - Datos Validación}
   \end{center}
 \end{figure}
 
 En esta segunda tanda de gráficos se observa una mejora leve también para los datos de validación. Podemos ver que la mayoría de las marcas del mismo color están aproximadamente cercanas entre sí.
+
+Debido a la lenta performance de las pruebas con la red, continuar aumentando la cantidad de épocas se volvió inviable. De todas formas hicimos una prueba preliminar con 500 épocas para explorar la posibilidad de obtener mejores resultados. Éstos no fueron mejores que los presentados aquí con 200, por lo tanto no continuamos dicho experimento y nos quedamos con las 200.
+
+\subsubsection{Variando número de dimensiones}
+
+Debido a los resultados obtenidos, intentamos buscar una forma de mejorar la precisión de la clasificación. Por sugerencia docente, decidimos intentar aumentar la dimensionalidad de la salida. En lugar de reducir a 3 dimensiones como pide el enunciado, subimos la cantidad a 9 dimensiones, esperando obtener mejores resultados. \\
+Debido a la imposibilidad de graficar y observar espacialmente los resultados con 9 valores, partimos los vectores de salida y mostramos 3 espacios tridimensionales con 3 características cada uno. El procedimiento fue tomar las primeras 3 dimensiones de cada resultado, graficarlas en 3D, luego repetir con las siguientes 3 y continuar de esta forma.
+
 
 \newpage
 \subsection{Ejercicio 2}
