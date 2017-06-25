@@ -9,80 +9,268 @@ Presentamos en primer lugar los resultados obtenidos del problema de reducción 
 
 \subsection{Ejercicio 1 - Reducción de dimensiones}
 
-Para el primer ejercicio, los experimentos consistieron en variar la cantidad de épocas, la regla de aprendizaje y la cantidad de dimensiones de salida. Intentamos variar estos factores y observar diferencias en los gráficos 3D generados en base a las nuevas dimensiones.\\
+Para el primer ejercicio, los experimentos consistieron en variar la cantidad de épocas, la regla de aprendizaje y la cantidad de dimensiones de salida. Intentamos variar estos factores y observar diferencias en los gráficos 3D generados en base a las nuevas dimensiones.
 
-Comenzamos realizando clasificaciones con 100 épocas. Al obtener resultados imprecisos subimos la cantidad a 200. Allí observamos una clasificación mejor, más marcada la separación geométrica entre los distintos clusters.\\
+Comenzamos realizando clasificaciones con 100 épocas. Al obtener resultados imprecisos subimos la cantidad a 200. Allí observamos una clasificación mejor, más marcada la separación geométrica entre los distintos clusters.
 
-Luego comparamos los resultados obtenidos entre las distintas reglas. Repetimos las ejecuciones variando la regla entre Oja y Sanger para comprobar su eficacia.\\
+Luego comparamos los resultados obtenidos entre las distintas reglas. Repetimos las ejecuciones variando la regla entre Oja y Sanger para comprobar su eficacia.
 
 Por último, decidimos cambiar la cantidad de dimensiones de sálida, esperando una mejora en las clasificaciones. 
 
-\subsubsection{Regla de Oja - 200 épocas}
-En los primeros experimentos, fuimos probando la calidad de la clasificación utilizando solamente 100 épocas. La decisión se basó en un tema de performance de la red. Cada ejecución tenía una cierta demora, por lo que empezamos probando con pocas épocas. Mostramos los primeros resultados que obtuvimos, utilizando la regla de Oja:
+\subsubsection{Regla de Oja - variando número de épocas}
+En los primeros experimentos, fuimos probando la calidad de la clasificación utilizando solamente 100 épocas. La decisión se basó en un tema de performance de la red. Cada ejecución tenía una considerable demora, por lo que empezamos probando con pocas épocas. Mostramos los primeros resultados que obtuvimos, utilizando la regla de Oja:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_train_2.png}
+  \caption{Oja - 3 dimensiones - 100 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_train_3.png}
+  \caption{Oja - 3 dimensiones - 100 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\newpage
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/ej1/oja/alt-oja_3salida_200ep_train.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Entrenamiento}
+    \includegraphics[scale=0.45]{../img/ej1/oja/oja_3salida_100ep_train.png}
+  \caption{Oja - 3 dimensiones - 100 épocas - Datos Entrenamiento}
   \end{center}
+\end{figure}
+
+Éstos son los gráficos de las ejecuciones utilizando regla de Oja, con 100 épocas. Notamos que se están comenzando a formar
+clusters de clasificación con distintos colores, pero que también hay mucho solapamiento en la parte central de cada vista.\\
+
+Luego de esta etapa de entrenamiento, procesamos los datos de validación:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_validation.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_validation_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/ej1/oja/alt-oja_3salida_200ep_train_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Entrenamiento}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.4]{../img/ej1/oja/alt-oja_3salida_200ep_train_3.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Entrenamiento}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.4]{../img/ej1/oja/alt-oja_3salida_200ep_train_4.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Entrenamiento}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../img/ej1/oja/alt-oja_3salida_200ep_validation.png}
+    \includegraphics[scale=0.65]{../img/ej1/oja/oja_3salida_100ep_validation_2.png}
   \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
   \end{center}
 \end{figure}
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
-  \end{center}
+\newpage
+
+Para los datos de validación vemos una dispersión muy grande. Se notan algunos puntos del mismo color agrupados levemente cerca, pero lejos
+de formar una división clara.\\
+
+Luego de obtener estos resultados, menos precisos de lo que esperábamos, decidimos intentar probar subiendo número de épocas. Observemos a continuación las mismas ejecuciones, pero subiendo el número de épocas a 200:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_train.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_train_2.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_train_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_train_4.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub4}
+\end{subfigure}
+\end{figure}
+
+En los datos de entrenamiento se observa que con 200 épocas se empiezan a notar más visiblemente
+los clusters de datos. Se observa una leve mejora en la clasificación con respecto a la versión de 100 épocas.
+
+Podemos ver de todas formas que algunas de las categorías se encuentran mezcladas entre sí mientras otras están más claramente divididas.
+
+A continuación los datos de validation.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_validation.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_200ep_validation_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.6]{../img/ej1/oja/alt-oja_3salida_200ep_validation_3.png}
+    \includegraphics[scale=0.65]{../img/ej1/oja/oja_3salida_200ep_validation_2.png}
   \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
   \end{center}
 \end{figure}
-% \begin{figure}[!htbp]
-% \centering
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/alt-oja_3salida_200ep_train_3.png}
-%   \caption{Oja - 3 dimensiones - 200 épocas}
-%   \label{fig:sub1}
-% \end{subfigure}%
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/alt-oja_3salida_200ep_train_4.png}
-%   \caption{Oja - 3 dimensiones - 200 épocas}
-%   \label{fig:sub2}
-% \end{subfigure}
-% \end{figure}
+
+En esta segunda tanda de gráficos se observa una mejora leve también para los datos de validación. Podemos ver que la mayoría de las marcas del mismo color están aproximadamente cercanas entre sí.
+
+\subsubsection{Regla de Sanger - variando número de épocas}
+Repetimos en este caso el experimento anterior utilizando ahora la regla de Sanger. Intentaremos comprobar si con esta nueva regla de aprendizaje
+se obtienen mejores resultados variando el número de épocas.
+
+En primer lugar, resultados con 100 épocas:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_train.png}
+  \caption{Oja - 3 dimensiones - 100 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_train_3.png}
+  \caption{Oja - 3 dimensiones - 100 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.45]{../img/ej1/sanger/sanger_3salida_100ep_train_2.png}
+  \caption{Oja - 3 dimensiones - 100 épocas - Datos Entrenamiento}
+  \end{center}
+\end{figure}
+
+Éstos son los gráficos de las ejecuciones utilizando regla de Oja, con 100 épocas. Notamos que se están comenzando a formar
+clusters de clasificación con distintos colores, pero que también hay mucho solapamiento en la parte central de cada vista.\\
+
+Luego de esta etapa de entrenamiento, procesamos los datos de validación:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{../img/ej1/sanger/sanger_3salida_100ep_validation_2.png}
+  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
+  \end{center}
+\end{figure}
+
+\newpage
+
+Para los datos de validación vemos una dispersión muy grande. Se notan algunos puntos del mismo color agrupados levemente cerca, pero lejos
+de formar una división clara.\\
+
+Observemos a continuación las mismas ejecuciones, pero subiendo el número de épocas a 200:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_2.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_train_4.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub4}
+\end{subfigure}
+\end{figure}
+
+En los datos de entrenamiento se observa que con 200 épocas se empiezana notar más visiblemente
+los clusters de datos. Se observa una leve mejora en la clasificación con respecto a la versión de 100 épocas.
+
+Podemos ver de todas formas que algunas de las categorías se encuentran mezcladas entre sí mientras otras están más claramente divididas.
+
+A continuación los datos de validation.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_validation.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_200ep_validation_3.png}
+  \caption{Oja - 3 dimensiones - 200 épocas}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.65]{../img/ej1/sanger/sanger_3salida_200ep_validation_2.png}
+  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
+  \end{center}
+\end{figure}
+
+En esta segunda tanda de gráficos se observa una mejora leve también para los datos de validación. Podemos ver que la mayoría de las marcas del mismo color están aproximadamente cercanas entre sí.
 
 \newpage
 \subsection{Ejercicio 2}

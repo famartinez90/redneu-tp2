@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.12)  24 JUN 2017 20:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.12)  25 JUN 2017 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,6 +902,103 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 10.
 ) (./informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub1' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub2' multiply defined.
+
 )
 \openout1 = `informe.aux'.
 
@@ -919,8 +1016,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 67.
@@ -1023,7 +1119,7 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count150
-<logo_dc.jpg, id=56, 215.6055pt x 83.5923pt>
+<logo_dc.jpg, id=60, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
  <use logo_dc.jpg>
 Package pdftex.def Info: logo_dc.jpg used on input line 70.
@@ -1042,7 +1138,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logo_uba.jpg, id=57, 225.4824pt x 231.7458pt>
+<logo_uba.jpg, id=61, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
  <use logo_uba.jpg>
 Package pdftex.def Info: logo_uba.jpg used on input line 70.
@@ -1314,21 +1410,6 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 10.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 10.
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand >>
@@ -1342,207 +1423,541 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 20.
 
-<../img/ej1/oja/alt-oja_3salida_200ep_train.png, id=99, 1235.817pt x 594.0594pt
->
-File: ../img/ej1/oja/alt-oja_3salida_200ep_train.png Graphic file (type png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_train.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_train.png used on
- input line 25.
-(pdftex.def)             Requested size: 494.31804pt x 237.61955pt.
+<../img/ej1/oja/oja_3salida_100ep_train_2.png, id=104, 669.9429pt x 413.3844pt>
+File: ../img/ej1/oja/oja_3salida_100ep_train_2.png Graphic file (type png)
+<use ../img/ej1/oja/oja_3salida_100ep_train_2.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_train_2.png used on i
+nput line 27.
+(pdftex.def)             Requested size: 669.94125pt x 413.38338pt.
 
-Overfull \hbox (14.3173pt too wide) in paragraph at lines 25--26
- [] 
+<../img/ej1/oja/oja_3salida_100ep_train_3.png, id=106, 698.1282pt x 391.7034pt>
+File: ../img/ej1/oja/oja_3salida_100ep_train_3.png Graphic file (type png)
+<use ../img/ej1/oja/oja_3salida_100ep_train_3.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_train_3.png used on i
+nput line 33.
+(pdftex.def)             Requested size: 698.1265pt x 391.70244pt.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 39.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 39.
+ [5 <../img/ej1/oja/oja_3salida_100ep_train_2.png> <../img/ej1/oja/oja_3salida_
+100ep_train_3.png>]
+<../img/ej1/oja/oja_3salida_100ep_train.png, id=116, 895.4253pt x 500.8311pt>
+File: ../img/ej1/oja/oja_3salida_100ep_train.png Graphic file (type png)
+
+<use ../img/ej1/oja/oja_3salida_100ep_train.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_train.png used on inp
+ut line 43.
+(pdftex.def)             Requested size: 402.93765pt x 225.3719pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
  []
 
 
-<../img/ej1/oja/alt-oja_3salida_200ep_train_2.png, id=101, 1235.817pt x 594.059
-4pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_train_2.png Graphic file (type png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_train_2.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_train_2.png used 
-on input line 32.
-(pdftex.def)             Requested size: 494.31804pt x 237.61955pt.
+<../img/ej1/oja/oja_3salida_100ep_validation.png, id=117, 557.9244pt x 325.215p
+t>
+File: ../img/ej1/oja/oja_3salida_100ep_validation.png Graphic file (type png)
+ <use ../img/ej1/oja/oja_3salida_100ep_validation.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_validation.png used o
+n input line 57.
+(pdftex.def)             Requested size: 557.92302pt x 325.2142pt.
 
-Overfull \hbox (14.3173pt too wide) in paragraph at lines 32--33
- [] 
- []
+<../img/ej1/oja/oja_3salida_100ep_validation_3.png, id=118, 430.7292pt x 281.85
+3pt>
+File: ../img/ej1/oja/oja_3salida_100ep_validation_3.png Graphic file (type png)
+
+ <use ../img/ej1/oja/oja_3salida_100ep_validation_3.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_validation_3.png used
+ on input line 63.
+(pdftex.def)             Requested size: 430.72815pt x 281.85231pt.
+
+<../img/ej1/oja/oja_3salida_100ep_validation_2.png, id=119, 426.393pt x 287.634
+6pt>
+File: ../img/ej1/oja/oja_3salida_100ep_validation_2.png Graphic file (type png)
+
+ <use ../img/ej1/oja/oja_3salida_100ep_validation_2.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_validation_2.png used
+ on input line 71.
+(pdftex.def)             Requested size: 277.15216pt x 186.96027pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 76.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 76.
+[6 <../img/ej1/oja/oja_3salida_100ep_train.png> <../img/ej1/oja/oja_3salida_100
+ep_validation.png> <../img/ej1/oja/oja_3salida_100ep_validation_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
-<../img/ej1/oja/alt-oja_3salida_200ep_train_3.png, id=102, 1235.817pt x 594.059
-4pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_train_3.png Graphic file (type png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_train_3.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_train_3.png used 
-on input line 39.
-(pdftex.def)             Requested size: 494.31804pt x 237.61955pt.
-
-Overfull \hbox (14.3173pt too wide) in paragraph at lines 39--40
- [] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<../img/ej1/oja/oja_3salida_200ep_train.png, id=129, 913.16156pt x 461.47406pt>
+File: ../img/ej1/oja/oja_3salida_200ep_train.png Graphic file (type png)
+<use ../img/ej1/oja/oja_3salida_200ep_train.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train.png used on inp
+ut line 87.
+(pdftex.def)             Requested size: 913.15933pt x 461.47292pt.
+
+<../img/ej1/oja/oja_3salida_200ep_train_2.png, id=130, 638.8668pt x 374.3586pt>
+File: ../img/ej1/oja/oja_3salida_200ep_train_2.png Graphic file (type png)
+<use ../img/ej1/oja/oja_3salida_200ep_train_2.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_2.png used on i
+nput line 93.
+(pdftex.def)             Requested size: 638.86523pt x 374.35768pt.
+
+<../img/ej1/oja/oja_3salida_200ep_train_3.png, id=131, 675.0018pt x 339.669pt>
+File: ../img/ej1/oja/oja_3salida_200ep_train_3.png Graphic file (type png)
+
+<use ../img/ej1/oja/oja_3salida_200ep_train_3.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_3.png used on i
+nput line 102.
+(pdftex.def)             Requested size: 675.00015pt x 339.66817pt.
+
+<../img/ej1/oja/oja_3salida_200ep_train_4.png, id=132, 857.1222pt x 495.7722pt>
+File: ../img/ej1/oja/oja_3salida_200ep_train_4.png Graphic file (type png)
+<use ../img/ej1/oja/oja_3salida_200ep_train_4.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_4.png used on i
+nput line 108.
+(pdftex.def)             Requested size: 857.1201pt x 495.77098pt.
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 119.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 119.
+ [7 <../img/ej1/oja/oja_3salida_100ep_validation_2.png> <../img/ej1/oja/oja_3sa
+lida_200ep_train.png> <../img/ej1/oja/oja_3salida_200ep_train_2.png> <../img/ej
+1/oja/oja_3salida_200ep_train_3.png> <../img/ej1/oja/oja_3salida_200ep_train_4.
+png>]
+<../img/ej1/oja/oja_3salida_200ep_validation.png, id=146, 619.3539pt x 355.5684
+pt>
+File: ../img/ej1/oja/oja_3salida_200ep_validation.png Graphic file (type png)
+ <use ../img/ej1/oja/oja_3salida_200ep_validation.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_validation.png used o
+n input line 125.
+(pdftex.def)             Requested size: 619.35239pt x 355.56752pt.
 
 
-<../img/ej1/oja/alt-oja_3salida_200ep_train_4.png, id=103, 1235.817pt x 594.059
-4pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_train_4.png Graphic file (type png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_train_4.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_train_4.png used 
-on input line 46.
-(pdftex.def)             Requested size: 494.31804pt x 237.61955pt.
+LaTeX Warning: File `../img/ej1/oja/oja_3salida_200ep_validation_3.png' not fou
+nd on input line 131.
 
-Overfull \hbox (14.3173pt too wide) in paragraph at lines 46--47
- [] 
+
+! Package pdftex.def Error: File `../img/ej1/oja/oja_3salida_200ep_validation_3
+.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 ...1/oja/oja_3salida_200ep_validation_3.png}
+                                                  
+? 
+
+<../img/ej1/oja/oja_3salida_200ep_validation_2.png, id=147, 476.2593pt x 278.23
+95pt>
+File: ../img/ej1/oja/oja_3salida_200ep_validation_2.png Graphic file (type png)
+
+ <use ../img/ej1/oja/oja_3salida_200ep_validation_2.png>
+Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_validation_2.png used
+ on input line 139.
+(pdftex.def)             Requested size: 309.56487pt x 180.85353pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 146.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 146.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 146.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 146.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 146.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 146.
+
+<../img/ej1/sanger/sanger_3salida_100ep_train.png, id=148, 884.5848pt x 498.663
+pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_train.png Graphic file (type png)
+ <use ../img/ej1/sanger/sanger_3salida_100ep_train.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train.png used 
+on input line 156.
+(pdftex.def)             Requested size: 884.58263pt x 498.66177pt.
+
+<../img/ej1/sanger/sanger_3salida_100ep_train_3.png, id=149, 691.6239pt x 396.0
+396pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_train_3.png Graphic file (type png
+)
+ <use ../img/ej1/sanger/sanger_3salida_100ep_train_3.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train_3.png use
+d on input line 162.
+(pdftex.def)             Requested size: 691.62222pt x 396.03862pt.
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 168.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 168.
+ [8 <../img/ej1/oja/oja_3salida_200ep_validation.png> <../img/ej1/oja/oja_3sali
+da_200ep_validation_2.png>]
+<../img/ej1/sanger/sanger_3salida_100ep_train_2.png, id=158, 665.6067pt x 424.2
+249pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_train_2.png Graphic file (type png
+)
+ <use ../img/ej1/sanger/sanger_3salida_100ep_train_2.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train_2.png use
+d on input line 172.
+(pdftex.def)             Requested size: 299.52025pt x 190.89943pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
+
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-<../img/ej1/oja/alt-oja_3salida_200ep_validation.png, id=104, 890.3664pt x 450.
-2421pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_validation.png Graphic file (type pn
-g)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_validation.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_validation.png us
-ed on input line 53.
-(pdftex.def)             Requested size: 534.22397pt x 270.14732pt.
-
-Overfull \hbox (54.22324pt too wide) in paragraph at lines 53--54
- [] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-<../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png, id=105, 890.3664pt x 45
-0.2421pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png Graphic file (type 
+<../img/ej1/sanger/sanger_3salida_100ep_validation.png, id=159, 556.479pt x 338
+.2236pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_validation.png Graphic file (type 
 png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png 
-used on input line 60.
-(pdftex.def)             Requested size: 534.22397pt x 270.14732pt.
+ <use ../img/ej1/sanger/sanger_3salida_100ep_validation.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_validation.png 
+used on input line 186.
+(pdftex.def)             Requested size: 556.47765pt x 338.22278pt.
 
-Overfull \hbox (54.22324pt too wide) in paragraph at lines 60--61
- [] 
- []
+<../img/ej1/sanger/sanger_3salida_100ep_validation_3.png, id=160, 426.393pt x 2
+81.853pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_validation_3.png Graphic file (typ
+e png)
+ <use ../img/ej1/sanger/sanger_3salida_100ep_validation_3.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_validation_3.pn
+g used on input line 192.
+(pdftex.def)             Requested size: 426.39195pt x 281.85231pt.
+
+<../img/ej1/sanger/sanger_3salida_100ep_validation_2.png, id=161, 426.393pt x 3
+12.2064pt>
+File: ../img/ej1/sanger/sanger_3salida_100ep_validation_2.png Graphic file (typ
+e png)
+ <use ../img/ej1/sanger/sanger_3salida_100ep_validation_2.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_validation_2.pn
+g used on input line 200.
+(pdftex.def)             Requested size: 277.15216pt x 202.93175pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+LaTeX Info: Redefining \. on input line 205.
+LaTeX Info: Redefining \% on input line 205.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 205.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 205.
+[9 <../img/ej1/sanger/sanger_3salida_100ep_train.png> <../img/ej1/sanger/sanger
+_3salida_100ep_train_3.png> <../img/ej1/sanger/sanger_3salida_100ep_train_2.png
+> <../img/ej1/sanger/sanger_3salida_100ep_validation.png> <../img/ej1/sanger/sa
+nger_3salida_100ep_validation_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
-<../img/ej1/oja/alt-oja_3salida_200ep_validation_3.png, id=106, 890.3664pt x 45
-0.2421pt>
-File: ../img/ej1/oja/alt-oja_3salida_200ep_validation_3.png Graphic file (type 
+ []
+
+
+<../img/ej1/sanger/sanger_3salida_200ep_train.png, id=174, 615.7404pt x 378.694
+8pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_train.png Graphic file (type png)
+ <use ../img/ej1/sanger/sanger_3salida_200ep_train.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_train.png used 
+on input line 216.
+(pdftex.def)             Requested size: 615.73889pt x 378.69386pt.
+
+<../img/ej1/sanger/sanger_3salida_200ep_train_2.png, id=175, 456.7464pt x 355.5
+684pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_train_2.png Graphic file (type png
+)
+ <use ../img/ej1/sanger/sanger_3salida_200ep_train_2.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_train_2.png use
+d on input line 222.
+(pdftex.def)             Requested size: 456.74529pt x 355.56752pt.
+
+<../img/ej1/sanger/sanger_3salida_200ep_train_3.png, id=176, 461.0826pt x 293.4
+162pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_train_3.png Graphic file (type png
+)
+ <use ../img/ej1/sanger/sanger_3salida_200ep_train_3.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_train_3.png use
+d on input line 231.
+(pdftex.def)             Requested size: 461.08147pt x 293.41548pt.
+
+
+LaTeX Warning: File `../img/ej1/sanger/sanger_3salida_200ep_train_4.png' not fo
+und on input line 237.
+
+
+! Package pdftex.def Error: File `../img/ej1/sanger/sanger_3salida_200ep_train_
+4.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.237 .../sanger/sanger_3salida_200ep_train_4.png}
+                                                  
+? 
+
+<../img/ej1/sanger/sanger_3salida_200ep_validation.png, id=177, 573.8238pt x 36
+6.4089pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_validation.png Graphic file (type 
 png)
- <use ../img/ej1/oja/alt-oja_3salida_200ep_validation_3.png>
-Package pdftex.def Info: ../img/ej1/oja/alt-oja_3salida_200ep_validation_3.png 
-used on input line 67.
-(pdftex.def)             Requested size: 534.22397pt x 270.14732pt.
+ <use ../img/ej1/sanger/sanger_3salida_200ep_validation.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_validation.png 
+used on input line 254.
+(pdftex.def)             Requested size: 573.8224pt x 366.408pt.
 
-Overfull \hbox (54.22324pt too wide) in paragraph at lines 67--68
- [] 
- []
+<../img/ej1/sanger/sanger_3salida_200ep_validation_3.png, id=178, 427.8384pt x 
+271.7352pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_validation_3.png Graphic file (typ
+e png)
+ <use ../img/ej1/sanger/sanger_3salida_200ep_validation_3.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_validation_3.pn
+g used on input line 260.
+(pdftex.def)             Requested size: 427.83734pt x 271.73451pt.
+
+<../img/ej1/sanger/sanger_3salida_200ep_validation_2.png, id=179, 420.6114pt x 
+310.761pt>
+File: ../img/ej1/sanger/sanger_3salida_200ep_validation_2.png Graphic file (typ
+e png)
+ <use ../img/ej1/sanger/sanger_3salida_200ep_validation_2.png>
+Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_validation_2.pn
+g used on input line 268.
+(pdftex.def)             Requested size: 273.39418pt x 201.99225pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 87.
-LaTeX Info: Redefining \% on input line 87.
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 87.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 87.
-[5 <../img/ej1/oja/alt-oja_3salida_200ep_train.png>]
+(babel)             in language append on input line 275.
+[10 <../img/ej1/sanger/sanger_3salida_100ep_validation_2.png> <../img/ej1/sange
+r/sanger_3salida_200ep_train.png> <../img/ej1/sanger/sanger_3salida_200ep_train
+_2.png>]
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 88.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 88.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 88.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 88.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 88.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 88.
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 275.
+ [11 <../img/ej1/sanger/sanger_3salida_200ep_train_3.png> <../img/ej1/sanger/sa
+nger_3salida_200ep_validation.png> <../img/ej1/sanger/sanger_3salida_200ep_vali
+dation_3.png>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 90.
+(babel)             in language append on input line 276.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 90.
- [6 <../img/ej1/oja/alt-oja_3salida_200ep_train_2.png>]
+(babel)             in language append on input line 276.
+LaTeX Info: Redefining \. on input line 278.
+LaTeX Info: Redefining \% on input line 278.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 91.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 146.
+(babel)             in language append on input line 278.
+ [12 <../img/ej1/sanger/sanger_3salida_200ep_validation_2.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 279.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 334.
 )
 LaTeX Info: Redefining \. on input line 77.
 LaTeX Info: Redefining \% on input line 77.
@@ -1570,64 +1985,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 77.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 77.
- [7 <../img/ej1/oja/alt-oja_3salida_200ep_train_3.png>] 
+ [13] 
 AED: lastpage setting LastPage
-LaTeX Info: Redefining \. on input line 78.
-LaTeX Info: Redefining \% on input line 78.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 78.
-[8 <../img/ej1/oja/alt-oja_3salida_200ep_train_4.png> <../img/ej1/oja/alt-oja_3
-salida_200ep_validation.png>]
-LaTeX Info: Redefining \. on input line 78.
-LaTeX Info: Redefining \% on input line 78.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 78.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 78.
- [9 <../img/ej1/oja/alt-oja_3salida_200ep_validation_2.png> <../img/ej1/oja/alt
--oja_3salida_200ep_validation_3.png>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 78.
 Package babel Info: Redefining spanish shorthand >>
@@ -1642,32 +2001,28 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 78.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
-
 (./informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+Package rerunfilecheck Info: File `informe.out' has not changed.
+(rerunfilecheck)             Checksum: CB464D4154FA4CDDF614138F34B4815C;968.
 
 
-Package rerunfilecheck Warning: File `informe.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: Checksums for `informe.out':
-(rerunfilecheck)             Before: 124DB948E2FF245749C83356D80DC1FE;834
-(rerunfilecheck)             After:  00C81604B1409D8305ABA630F0E011FA;841.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 13586 strings out of 493304
- 195383 string characters out of 6139871
- 330929 words of memory out of 5000000
- 16800 multiletter control sequences out of 15000+600000
+ 13704 strings out of 493304
+ 200035 string characters out of 6139871
+ 330508 words of memory out of 5000000
+ 16884 multiletter control sequences out of 15000+600000
  10383 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,12n,43p,669b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,43p,669b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -1681,10 +2036,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on informe.pdf (9 pages, 1206896 bytes).
+Output written on informe.pdf (13 pages, 2825793 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
