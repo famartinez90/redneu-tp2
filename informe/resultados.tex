@@ -267,12 +267,239 @@ A continuación los datos de validation.
 En esta segunda tanda de gráficos se observa una mejora leve también para los datos de validación. Podemos ver que la mayoría de las marcas del mismo color están aproximadamente cercanas entre sí.
 
 Debido a la lenta performance de las pruebas con la red, continuar aumentando la cantidad de épocas se volvió inviable. De todas formas hicimos una prueba preliminar con 500 épocas para explorar la posibilidad de obtener mejores resultados. Éstos no fueron mejores que los presentados aquí con 200, por lo tanto no continuamos dicho experimento y nos quedamos con las 200.
-
-\subsubsection{Variando número de dimensiones}
+\newpage
+\subsubsection{Regla de Oja - Variando número de dimensiones}
 
 Debido a los resultados obtenidos, intentamos buscar una forma de mejorar la precisión de la clasificación. Por sugerencia docente, decidimos intentar aumentar la dimensionalidad de la salida. En lugar de reducir a 3 dimensiones como pide el enunciado, subimos la cantidad a 9 dimensiones, esperando obtener mejores resultados. \\
-Debido a la imposibilidad de graficar y observar espacialmente los resultados con 9 valores, partimos los vectores de salida y mostramos 3 espacios tridimensionales con 3 características cada uno. El procedimiento fue tomar las primeras 3 dimensiones de cada resultado, graficarlas en 3D, luego repetir con las siguientes 3 y continuar de esta forma.
+Debido a la imposibilidad de graficar y observar espacialmente los resultados con 9 valores, partimos los vectores de salida y mostramos 3 espacios tridimensionales con 3 características cada uno. El procedimiento fue tomar las primeras 3 dimensiones de cada resultado, graficarlas en 3D, luego repetir con las siguientes 3 y continuar de esta forma con las últimas.
 
+En este experimento solo mostraremos los resultados de las corridas de entrenamiento, ya que cuentan con un volumen de datos mayor y permiten apreciar mejor la división en clusters. A continuación mostraremos los resultados que obtuvimos para ambas reglas, utilizando 9 dimensiones de salida.
+
+Comenzamos con las primeras tres coordenadas:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_2.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_3.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_4.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\newpage
+
+En estas primeras 3 coordenadas, los clusters se encuentran muy entrelazados y mezclados, la clasificación no es clara. No se observan demasiadas mejoras
+contra la versión de 3 dimensiones únicas.
+
+Veamos las siguientes 3 coordenadas.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_2.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_3.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_4.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+Para las coordenadas 456 vemos que hay una mayor expansión del espacio ocupado por los datos y se nota un grado levemente mayor de separación entre
+los puntos coloreados.
+
+Veamos las siguientes 3 coordenadas.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_2.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_3.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_4.png}
+  \caption{Oja - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+En las últimas coordenadas los resultados son similares a las 456. Se notan algunas zonas donde predominan cierta categoría, con bastante solapamiento en la zona central.
+Los resultados no se muestran muy superiores a los obtenidos con solo 3 coordenadas totales.
+
+Observemos las ejecuciones utilizando Regla de Sanger.
+
+\subsubsection{Regla de Sanger - Variando número de dimensiones}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_2.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_3.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_4.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 123}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+Usando la regla de Sanger se observan mucho mejores resultados. Se pueden observar los clusters separados con mucha mayor claridad. 
+
+A continuación los resultados de las coordenadas 456:
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_2.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_3.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_4.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 456}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+En esta tanda vemos nuevamente una clasificación más marcada y con mayor espacio entre los clusters. Se puede apreciar la agrupación
+de las marcas del mismo color, mostrando la asociación entre documentos de la misma categoría.
+
+Veamos las últimas 3 coordenadas.
+
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_2.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_3.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_4.png}
+  \caption{Sanger - 9 dimensiones - 200 épocas - Coordenadas 789}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+En estas últimas se nota menos precisión en los clusters y mayor solapamiento. Sin embargo, considerado lo observado con Sanger en las primeras 3 coordenadas, éstos son los mejores
+resultados que obtuvimos en todo el ejercicio 1. En el caso de esta regla, la ampliación a 9 dimensiones mostró una diferencia notable en la calidad de la solución.
 
 \newpage
 \subsection{Ejercicio 2}
