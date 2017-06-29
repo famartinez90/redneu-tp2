@@ -16,7 +16,7 @@ nro_ejercicio, filepath, eta, epochs, train_pct, test_pct, \
 
 ######### PARSEO DE DATOS ##############
 
-f = open('tp2_training_dataset.csv', 'rb')
+f = open(filepath, 'rb')
 reader = csv.reader(f)
 categorias_verificacion = []
 atributos = []
@@ -51,14 +51,12 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 n_entrada = len(atributos[0])
 n_salida = 3
 
-if red_desde_archivo is not None:
+if red_desde_archivo:
     PPN = encoder.from_json(red_desde_archivo)
 else:
     PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
-    PPN.train_ej1(dataset_train, algoritmo="sanger", epochs=epochs)
+    PPN.train_ej1(dataset_train, algoritmo=regla, epochs=epochs)
 
-if red_hacia_archivo:
-    encoder.to_json(red_hacia_archivo, PPN)
 
 ######## OBTENCION COORDENADAS ##############
 
@@ -95,3 +93,7 @@ ax.scatter(
 )
 
 plt.show()
+
+######## OUTPUT A JSON ##############
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, PPN)

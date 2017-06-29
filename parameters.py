@@ -15,13 +15,13 @@ def iniciar():
 
     # Argumentos opcionales:
 
-    parser.add_argument("-file", "--filepath", default=None, help='Ubicacion del archivo con los datasets a procesar')
+    parser.add_argument("-file", "--filepath", default='tp2_training_dataset.csv', help='Ubicacion del archivo con los datasets a procesar')
     parser.add_argument("-ep", "--epochs", default=200, help='Cantidad de epocas. Default = 500')
     parser.add_argument("-eta", "--eta", default=0.01, help='Tasa de aprendizaje. Default = 0.05')
 
     parser.add_argument("-tr", "--train", default=90, help='% de input a utilizar como training. Default = 70')
-    parser.add_argument("-te", "--test", default=10, help='% de input a utilizar como testing. Default = 20')
-    parser.add_argument("-val", "--validation", default=0, help='% de input a utilizar como validation. Default = 10')
+    parser.add_argument("-te", "--test", default=0, help='% de input a utilizar como testing. Default = 20')
+    parser.add_argument("-val", "--validation", default=10, help='% de input a utilizar como validation. Default = 10')
 
     parser.add_argument("-rda", "--red_desde_archivo", default=None,
                         help='Permite elegir una red ya entrenada. Las redes estan almacenadas en archivos.'
