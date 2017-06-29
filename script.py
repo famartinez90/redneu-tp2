@@ -37,6 +37,8 @@ for i, mean in enumerate(column_means):
     for j, _ in enumerate(matrix):
         matrix[j][i] = matrix[j][i] - mean
 
+# Aca ordenamos al azar los documentos y sus categorias
+# de manera de siempre agarrar distintos conjuntos de train y validation
 rnd_state = np.random.get_state()
 np.random.shuffle(matrix)
 np.random.set_state(rnd_state)
