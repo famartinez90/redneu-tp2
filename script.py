@@ -5,6 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import network as ppn
+import parameters as params
+import encoder as encoder
+
+
+######### PARSEO DE PARAMETROS ##############
+
+nro_ejercicio, filepath, eta, epochs, train_pct, test_pct, \
+           validation_pct, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 
@@ -43,8 +51,14 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 n_entrada = len(atributos[0])
 n_salida = 3
 
-PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
-PPN.train_ej1(dataset_train, algoritmo="sanger", epochs=200)
+if red_desde_archivo is not None:
+    PPN = encoder.from_json(red_desde_archivo)
+else:
+    PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
+    PPN.train_ej1(dataset_train, algoritmo="sanger", epochs=epochs)
+
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, PPN)
 
 ######## OBTENCION COORDENADAS ##############
 
