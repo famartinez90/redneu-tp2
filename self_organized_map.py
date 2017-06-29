@@ -52,13 +52,57 @@ class SelfOrganizedMap(object):
             sigma, eta = self.cooling(iteration, sigma_0, t1_sigma, eta_0, t2_eta)
             iteration += 1
 
-            print sigma
-            print eta
-
             print 'Finalizada epoca '+str(ep)
 
-
         return self
+
+    def predict(self, documentos, categorias):
+        resultados = []
+
+        for r1 in range(len(self.map)):
+            resultados.append([])
+
+            for r2 in range(len(self.map)):
+                resultados[r1].append([])
+
+        for k, documento in enumerate(documentos):
+            winner_index = []
+            min_distancia = float('inf')
+
+            # Calculo todas las salidas de las neuronas de mi mapa
+            for i, row in enumerate(self.map):
+                for j, _ in enumerate(row):
+                    distancia = self.distancia_geometrica(documento, self.map[i][j]['pesos'])
+
+                    # Voy calculando cual es la neurona ganadora
+                    if distancia < min_distancia:
+                        min_distancia = distancia
+                        winner_index = np.array([i, j])
+
+            resultados[winner_index[0]][winner_index[1]].append(categorias[k])
+
+        return self.determinar_categoria_ganadora(resultados)
+
+    def print_nice(self, data):
+        for row in data:
+            print row
+
+    def determinar_categoria_ganadora(self, neurona_categorias):
+        mas_comunes = []
+
+        for i, neurona in enumerate(neurona_categorias):
+            mas_comunes.append([])
+            
+            for j, categorias in enumerate(neurona):
+                mas_comunes[i].append(self.mas_comun(categorias))
+
+        return mas_comunes
+                
+    def mas_comun(self, categorias):
+        if len(categorias) == 0:
+            return 0
+
+        return int(max(set(categorias), key=categorias.count))
 
     def funcion_vecindad(self, neurona, ganadora, sigma):
         return e**(-(self.distancia_geometrica(neurona, ganadora)**2 / 2*(sigma**2)))

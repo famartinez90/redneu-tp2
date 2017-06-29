@@ -55,8 +55,9 @@ map_size = 10
 sigma = 5
 
 SOM = som.SelfOrganizedMap(n_entrada, map_size)
-SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma)
+SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=30)
 
+SOM.predict(dataset_train, categorias_verificacion)
 
 # ######## OBTENCION COORDENADAS ##############
 
