@@ -3,11 +3,15 @@ import numpy as np
 
 class UnsupervisedLearningNetwork(object):
 
-    def __init__(self, n_entrada, n_salida):
+    def __init__(self, n_entrada = 1, n_salida = 3, basic_init_pesos=None):
         self.pesos_red = list()
 
-        for _ in range(n_salida):
-            self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
+        # Para cargar redes armadas con pesos ya entrenados
+        if basic_init_pesos is not None:
+            self.pesos_red = basic_init_pesos
+        else:
+            for _ in range(n_salida):
+                self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
     def train_ej1(self, dataset, eta=0.01, epochs=10, algoritmo="sanger"):
 
