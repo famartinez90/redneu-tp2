@@ -11,8 +11,7 @@ import encoder as encoder
 
 ######### PARSEO DE PARAMETROS ##############
 
-# nro_ejercicio, filepath, eta, epochs, train_pct, test_pct, \
-#            validation_pct, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
+filepath, eta, epochs, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 
@@ -55,9 +54,17 @@ map_size = 10
 sigma = 5
 
 SOM = som.SelfOrganizedMap(n_entrada, map_size)
-SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=30)
 
-SOM.predict(dataset_train, categorias_verificacion)
+if filepath == "sanger_network.data":
+    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)    
+    SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
+    resultados = SOM.predict(coordenadas, categorias_verificacion)
+else:
+    SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
+    resultados = SOM.predict(dataset_train, categorias_verificacion)
+
+
+print resultados
 
 # ######## OBTENCION COORDENADAS ##############
 

@@ -3,7 +3,6 @@ import csv
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import network as ppn
 import parameters as params
 import encoder as encoder
@@ -11,8 +10,7 @@ import encoder as encoder
 
 ######### PARSEO DE PARAMETROS ##############
 
-nro_ejercicio, filepath, eta, epochs, train_pct, test_pct, \
-           validation_pct, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
+filepath, eta, epochs, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 

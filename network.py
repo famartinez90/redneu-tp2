@@ -3,7 +3,7 @@ import numpy as np
 
 class UnsupervisedLearningNetwork(object):
 
-    def __init__(self, n_entrada = 1, n_salida = 3, basic_init_pesos=None):
+    def __init__(self, n_entrada=1, n_salida=3, basic_init_pesos=None):
         self.pesos_red = list()
 
         # Para cargar redes armadas con pesos ya entrenados

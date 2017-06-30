@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 from math import e, sqrt, pi, log
+import encoder as encoder
 
 class SelfOrganizedMap(object):
 
@@ -16,6 +17,15 @@ class SelfOrganizedMap(object):
             matrix.append(row)
 
         self.map = matrix
+
+    def translate_documentos_to_coordenadas(self, documentos, sanger_network_file):
+        ppn = encoder.from_json(sanger_network_file)
+        coordenadas = []
+
+        for documento in documentos:
+            coordenadas.append(ppn.predict_coordenadas_ej1(documento))
+
+        return coordenadas
 
     def train_con_documentos(self, documentos, categorias, sigma=5, eta=0.1, epochs=10):
         iteration = 0.0
@@ -62,7 +72,7 @@ class SelfOrganizedMap(object):
         for r1 in range(len(self.map)):
             resultados.append([])
 
-            for r2 in range(len(self.map)):
+            for _ in range(len(self.map)):
                 resultados[r1].append([])
 
         for k, documento in enumerate(documentos):
@@ -93,7 +103,7 @@ class SelfOrganizedMap(object):
         for i, neurona in enumerate(neurona_categorias):
             mas_comunes.append([])
             
-            for j, categorias in enumerate(neurona):
+            for _, categorias in enumerate(neurona):
                 mas_comunes[i].append(self.mas_comun(categorias))
 
         return mas_comunes
