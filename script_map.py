@@ -3,10 +3,10 @@ import csv
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import colors
 from mpl_toolkits.mplot3d import Axes3D
 import self_organized_map as som
 import parameters as params
-import encoder as encoder
 
 
 ######### PARSEO DE PARAMETROS ##############
@@ -64,9 +64,33 @@ else:
     resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
-print resultados
-
 # ######## OBTENCION COORDENADAS ##############
+
+cmap = colors.ListedColormap(
+    [
+        'white', 
+        (51.0/256.0, 51.0/256.0, 51.0/256.0, 1), 
+        (33.0/256.0, 150.0/256.0, 243.0/256.0, 1),
+        (76.0/256.0, 175.0/256.0, 80.0/256.0, 1),
+        (244.0/256.0, 67.0/256.0, 54.0/256.0, 1),
+        (255.0/256.0, 235.0/256.0, 59.0/256.0, 1),
+        (121.0/256.0, 85.0/256.0, 72.0/256.0, 1),
+        (255.0/256.0, 152.0/256.0, 0.0/256.0, 1),
+        (156.0/256.0, 39.0/256.0, 176.0/256.0, 1),
+        (96.0/256.0, 125.0/256.0, 139.0/256.0, 1)
+    ]
+)
+bounds = range(10)
+norm = colors.BoundaryNorm(bounds, cmap.N)
+
+column_labels = range(map_size)
+row_labels = range(map_size)
+heatmap = plt.pcolor(resultados, cmap=cmap, norm=norm)
+heatmap.axes.set_xticklabels = column_labels
+heatmap.axes.set_yticklabels = row_labels
+plt.colorbar(heatmap, ticks=range(10))
+
+plt.show()
 
 # coordenadas = []
 
