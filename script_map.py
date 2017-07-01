@@ -56,6 +56,7 @@ sigma = 7
 
 if red_desde_archivo:
     SOM = encoder.from_json(red_desde_archivo, 2)
+    resultados = SOM.predict(dataset_train, categorias_verificacion)
 else:
     SOM = som.SelfOrganizedMap(n_entrada, map_size)
 
@@ -90,46 +91,12 @@ norm = colors.BoundaryNorm(bounds, cmap.N)
 
 column_labels = range(map_size)
 row_labels = range(map_size)
-heatmap = plt.pcolor(resultados, cmap=cmap, norm=norm)
+heatmap = plt.pcolor(np.array(resultados), cmap=cmap, norm=norm)
 heatmap.axes.set_xticklabels = column_labels
 heatmap.axes.set_yticklabels = row_labels
 plt.colorbar(heatmap, ticks=range(11))
 
 plt.show()
-
-# coordenadas = []
-
-# for documento in dataset_train:
-#     coordenadas.append(PPN.predict_coordenadas_ej1(documento))
-
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
-# ax.scatter(
-#     [vector[0] for vector in coordenadas], 
-#     [vector[1] for vector in coordenadas], 
-#     [vector[2] for vector in coordenadas], 
-#     c=categorias_verificacion[:int(len(categorias_verificacion) * 0.9)]
-# )
-
-# plt.show()
-
-# # Para datos de validacion
-
-# coordenadas = []
-
-# for documento in dataset_validation:
-#     coordenadas.append(PPN.predict_coordenadas_ej1(documento))
-
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
-# ax.scatter(
-#     [vector[0] for vector in coordenadas], 
-#     [vector[1] for vector in coordenadas], 
-#     [vector[2] for vector in coordenadas], 
-#     c=categorias_verificacion[int(len(categorias_verificacion) * 0.9):]
-# )
-
-# plt.show()
 
 # ######## OUTPUT A JSON ##############
 if red_hacia_archivo:

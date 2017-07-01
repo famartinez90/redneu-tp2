@@ -18,8 +18,8 @@ def to_json(filepath, red, numero_ejercicio):
         else:
             pesos = red.map
 
-            for i in pesos:
-                for j in i:
+            for i, row in enumerate(pesos):
+                for j, subrow in enumerate(row):
                     pesos[i][j]['pesos'] = pesos[i][j]['pesos'].tolist()
 
             f.write(unicode(json.dumps(pesos, ensure_ascii=False)))
@@ -36,8 +36,8 @@ def from_json(filepath, numero_ejercicio):
             return ppn.UnsupervisedLearningNetwork(basic_init_pesos=pesos)
 
         else:
-            for i in pesos:
-                for j in i:
+            for i, row in enumerate(pesos):
+                for j, subrow in enumerate(row):
                     pesos[i][j]['pesos'] = np.array(pesos[i][j]['pesos'])
 
             return som.SelfOrganizedMap(basic_init_pesos=pesos)
