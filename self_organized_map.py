@@ -31,7 +31,7 @@ class SelfOrganizedMap(object):
         iteration = 0.0
         sigma_0 = sigma
         eta_0 = eta
-        t1_sigma = float(epochs) / float(log(sigma_0))
+        t1_sigma = float(epochs) / float(log(sigma_0, 2))
         t2_eta = float(epochs)
 
         for ep in range(epochs):
@@ -59,7 +59,9 @@ class SelfOrganizedMap(object):
 
                         self.map[i][j]['pesos'] += eta * h * np.subtract(documento, self.map[i][j]['pesos'])
             
-            sigma, eta = self.cooling(iteration, sigma_0, t1_sigma, eta_0, t2_eta)
+            if iteration < (epochs * 3 / 4):
+                sigma, eta = self.cooling(iteration, sigma_0, t1_sigma, eta_0, t2_eta)
+            
             iteration += 1
 
             print 'Finalizada epoca '+str(ep)
