@@ -52,7 +52,7 @@ n_entrada = len(atributos[0])
 n_salida = 3
 
 if red_desde_archivo:
-    PPN = encoder.from_json(red_desde_archivo)
+    PPN = encoder.from_json(red_desde_archivo, 1)
 else:
     PPN = ppn.UnsupervisedLearningNetwork(n_entrada, n_salida)
     PPN.train_ej1(dataset_train, algoritmo=regla, epochs=epochs)
@@ -96,4 +96,4 @@ plt.show()
 
 ######## OUTPUT A JSON ##############
 if red_hacia_archivo:
-    encoder.to_json(red_hacia_archivo, PPN)
+    encoder.to_json(red_hacia_archivo, PPN, 1)

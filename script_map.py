@@ -7,6 +7,7 @@ from matplotlib import colors
 from mpl_toolkits.mplot3d import Axes3D
 import self_organized_map as som
 import parameters as params
+import encoder as encoder
 
 
 ######### PARSEO DE PARAMETROS ##############
@@ -54,15 +55,19 @@ map_size = 7
 sigma = 7
 longer_width = 0
 
-SOM = som.SelfOrganizedMap(n_entrada, map_size, offset_width_map=longer_width)
-
-if filepath == "sanger_network.data":
-    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)    
-    SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
-    resultados = SOM.predict(coordenadas, categorias_verificacion)
-else:
-    SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+if red_desde_archivo:
+    SOM = encoder.from_json(red_desde_archivo, 2)
     resultados = SOM.predict(dataset_train, categorias_verificacion)
+else:
+    SOM = som.SelfOrganizedMap(n_entrada, map_size, offset_width_map=longer_width)
+
+    if filepath == "sanger_network.data":
+        coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)
+        SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+        resultados = SOM.predict(coordenadas, categorias_verificacion)
+    else:
+        SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+        resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
 # ######## OBTENCION COORDENADAS ##############
@@ -87,7 +92,7 @@ norm = colors.BoundaryNorm(bounds, cmap.N)
 
 column_labels = range(map_size)
 row_labels = range(map_size+longer_width)
-heatmap = plt.pcolor(resultados, cmap=cmap, norm=norm)
+heatmap = plt.pcolor(np.array(resultados), cmap=cmap, norm=norm)
 heatmap.axes.set_xticklabels = column_labels
 heatmap.axes.set_yticklabels = row_labels
 m = plt.colorbar(heatmap, ticks=range(11))
@@ -102,8 +107,6 @@ else:
     resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
 
 errores_x_categoria = [(x+1, 0) for x in range(9)]
-
-print errores_x_categoria
 
 for i, row in enumerate(resultados_validation):
     for j, _ in enumerate(row):
@@ -125,3 +128,7 @@ chart_bar.bar(x, y, width, color=(63.0/256.0, 81.0/256.0, 181.0/256.0, 1))
 # print errores_x_categoria
 
 plt.show()
+
+# ######## OUTPUT A JSON ##############
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, SOM, 2)

@@ -5,21 +5,25 @@ import encoder as encoder
 
 class SelfOrganizedMap(object):
 
-    def __init__(self, n_entrada, map_size, offset_width_map=0):
-        matrix = []
+    def __init__(self, n_entrada = 1, map_size = 7, basic_init_pesos=None, offset_width_map=0):
 
-        for _ in range(map_size):
-            row = []
-            
-            for _ in range(map_size+offset_width_map):
-                row.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
+        # Para cargar redes armadas con pesos ya entrenados
+        if basic_init_pesos is not None:
+            self.map = basic_init_pesos
+        else:
+            matrix = []
 
-            matrix.append(row)
+            for _ in range(map_size):
+                row = []
+                for _ in range(map_size+offset_width_map):
+                    row.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
-        self.map = matrix
+                matrix.append(row)
+
+            self.map = matrix
 
     def translate_documentos_to_coordenadas(self, documentos, sanger_network_file):
-        ppn = encoder.from_json(sanger_network_file)
+        ppn = encoder.from_json(sanger_network_file, 1)
         coordenadas = []
 
         for documento in documentos:
