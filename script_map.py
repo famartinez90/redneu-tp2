@@ -53,22 +53,23 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 n_entrada = len(atributos[0])
 map_size = 7
 sigma = 7
+longer_width = 0
 
 if red_desde_archivo:
     SOM = encoder.from_json(red_desde_archivo, 2)
 else:
-    SOM = som.SelfOrganizedMap(n_entrada, map_size)
+    SOM = som.SelfOrganizedMap(n_entrada, map_size, offset_width_map=longer_width)
 
 # Si proveo red del ej1 para redurcir, entonces no tomar los documentos enteros sino
 # Reducir dimensionalidad utilizando dicha red
 if red_ej1 is not None:
     coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
-    SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
+    SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
     resultados = SOM.predict(coordenadas, categorias_verificacion)
 
 # Si no hay red ej1, usar dataset default
 else:
-    SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
+    SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
     resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
@@ -97,11 +98,41 @@ bounds = range(11)
 norm = colors.BoundaryNorm(bounds, cmap.N)
 
 column_labels = range(map_size)
-row_labels = range(map_size)
+row_labels = range(map_size+longer_width)
 heatmap = plt.pcolor(np.array(resultados), cmap=cmap, norm=norm)
 heatmap.axes.set_xticklabels = column_labels
 heatmap.axes.set_yticklabels = row_labels
-plt.colorbar(heatmap, ticks=range(11))
+m = plt.colorbar(heatmap, ticks=range(11))
+
+# plt.show()
+
+######### CALCULO DEL ERROR CON VALIDACION ###########
+
+if filepath == "sanger_network.data":
+    resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
+else:
+    resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
+
+errores_x_categoria = [(x+1, 0) for x in range(9)]
+
+for i, row in enumerate(resultados_validation):
+    for j, _ in enumerate(row):
+        if resultados[i][j] != resultados_validation[i][j]:
+            errores_x_categoria[resultados[i][j] - 1] = (errores_x_categoria[resultados[i][j] - 1][0], errores_x_categoria[resultados[i][j] - 1][1] + 1)
+
+fig = plt.figure()
+chart_bar = fig.add_subplot(111)
+
+y = [q[1] for q in errores_x_categoria]
+x = [q[0] for q in errores_x_categoria]
+width = 1/1.5
+chart_bar.bar(x, y, width, color=(63.0/256.0, 81.0/256.0, 181.0/256.0, 1))
+
+
+# print resultados
+# print '---------------'
+# print resultados_validation
+# print errores_x_categoria
 
 plt.show()
 
