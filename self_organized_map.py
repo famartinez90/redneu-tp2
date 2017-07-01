@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
+from math import e, log
 import numpy as np
-from math import e, sqrt, pi, log
 import encoder as encoder
 
 class SelfOrganizedMap(object):
 
-    def __init__(self, n_entrada, map_size):
+    def __init__(self, n_entrada, map_size, offset_width_map=0):
         matrix = []
 
         for _ in range(map_size):
             row = []
             
-            for _ in range(map_size):
+            for _ in range(map_size+offset_width_map):
                 row.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
 
             matrix.append(row)
@@ -27,7 +27,7 @@ class SelfOrganizedMap(object):
 
         return coordenadas
 
-    def train_con_documentos(self, documentos, categorias, sigma=5, eta=0.1, epochs=10):
+    def train_con_documentos(self, documentos, sigma=5, eta=0.1, epochs=10):
         iteration = 0.0
         sigma_0 = sigma
         eta_0 = eta
@@ -68,13 +68,13 @@ class SelfOrganizedMap(object):
 
         return self
 
-    def predict(self, documentos, categorias):
+    def predict(self, documentos, categorias, offset=0):
         resultados = []
 
-        for r1 in range(len(self.map)):
+        for r1, row in enumerate(self.map):
             resultados.append([])
 
-            for _ in range(len(self.map)):
+            for _ in enumerate(row):
                 resultados[r1].append([])
 
         for k, documento in enumerate(documentos):
@@ -91,7 +91,7 @@ class SelfOrganizedMap(object):
                         min_distancia = distancia
                         winner_index = np.array([i, j])
 
-            resultados[winner_index[0]][winner_index[1]].append(categorias[k])
+            resultados[winner_index[0]][winner_index[1]].append(categorias[k+offset])
 
         return self.determinar_categoria_ganadora(resultados)
 

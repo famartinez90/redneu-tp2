@@ -527,14 +527,66 @@ Si bien hay un idea de agrupamiento no es lo que esperábamos, por lo cual decid
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/map_1000ep_850en.png}
+    \includegraphics[scale=0.4]{../img/map_1000ep_850en_v2.png}
   \caption{Mapa 10x10 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
   \end{center}
 \end{figure}
 
 Sin embargo, encontramos muy extraño que haya tantos blancos en el mapa, que significa que esas neuronas que están blancas no fueron activadas por ningún documento cuando realizamos la última pasada de los documentos sobre la red entrenada para armar el mapa. Esto nos desconcertó de si era correcto o no, con lo cual recurrimos a consultarlo con los profesores, lo que nos permitió entender que esto no debería suceder y que las posibles causas podían ser que nuestro mapa era demasiado grande, o que teníamos algún problema en la función de vecindad y/o las fases de ordenamiento y convergencia y/o nuestro código en sí.
 
-Luego de revisar nuestra implementación, descubrimos que las fases de ordenamiento y convergencia no estaban muy bien definidas y que durante todas las épocas tanto el sigma como el eta no dejaban de ser \textit{enfriados}. Es por eso que decidimos plantear que de las 1000 épocas, dos tercios de las mismas sean de ordenamiento y el resto de convergencia. Además, decidimos achicar el área de nuestro mapa de neuronas de 10x10 a 8x8 y volvimos a correr el experimento.
+Luego de revisar nuestra implementación, descubrimos que las fases de ordenamiento y convergencia no estaban muy bien definidas y que durante todas las épocas tanto el sigma como el eta no dejaban de ser \textit{enfriados}. Es por eso que decidimos plantear que de las 1000 épocas, dos tercios de las mismas sean de ordenamiento y el resto de convergencia. Además, decidimos achicar el área de nuestro mapa de neuronas de 10x10 a 8x8 y volvimos a correr el experimento con sigma 5 y con sigma 8.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/map8x8_1000ep_850en.png}
+  \caption{Mapa 8x8 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/map8x8_1000ep_850en_sigma8.png}
+  \caption{Mapa 8x8 - 850 ejes x neurona - 1000 épocas - Sigma 8 - Entrenamiento}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+Con los resultados podemos ver que la presencia de blancos disminuyo ligeramente pero siguen presentes, incluso aún no tenemos una clusterización perfecta que es lo que queremos lograr. Debido a que no estamos conformes con éstos resultados, decidimos ahora modificar la duración de las fases de ordenamiento y convergencia. Recordemos que hasta éste momento estábamos utilizando 2 tercios de la 1000 épocas para el ordenamiento y el tercio restante para convergencia (~333 épocas para convergencia). Ahora, en vez de eso, haremos pruebas con 1 medio (500 épocas) y 1 cuarto (250 épocas) para convergencia.
+
+\begin{figure}[!htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/map8x8_1000ep_850en_sigma8_faseord500.png}
+  \caption{Mapa 8x8 - 850 ejes x neurona - 1000 épocas (500 ord/500 conv) - Sigma 8 - Entrenamiento}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth, scale=1]{../img/map8x8_1000ep_850en_sigma8_faseord750.png}
+  \caption{Mapa 8x8 - 850 ejes x neurona - 1000 épocas (750 ord/250 conv) - Sigma 8 - Entrenamiento}
+  \label{fig:sub2}
+\end{subfigure}
+\end{figure}
+
+Como se puede apreciar, el problema de clusterización se resuelve en su totalidad utilizando 750 épocas para el ordenamiento y 250 para la convergencia. Por otro lado, el problema de los blancos sigue presente, lo cual nos lleva nuevamente a replantear nuestros parámetros para eliminar este comportamiento en su totalidad. Es por eso que decidimos utilizar un mapa de neuronas más pequeño, de 7x7 en vez de 8x8. 
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../img/map7x7_1000ep_850en_sigma7_faseord750.png}
+  \caption{Mapa 7x7 - 850 ejes x neurona - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
+  \end{center}
+\end{figure}
+
+Ahora sí, en este experimento conseguimos los resultados esperados, con lo cual confirmamos que nuestro problema era que el mapa de neuronas estaba demasiado grande. Un detalle importante es que luego de realizar este experimento nos dimos cuenta que las categorías 8 y 9 estaban siendo coloreadas de la misma manera, con lo cual tuvimos que ajustar el mapa para que salga correctamente.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png}
+  \caption{Mapa 7x7 - 850 ejes x neurona - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
+  \end{center}
+\end{figure}
 
 \newpage
 \section{Soluciones Óptimas Propuestas}
