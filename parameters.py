@@ -18,6 +18,11 @@ def iniciar():
                              'Este parametro toma un filepath que contenga una red en formato json. Opciones: red_ej1.json, red_ej2.json')
 
     parser.add_argument("-r", "--regla", default="sanger", help='Regla de aprendizaje para ejercicio 1. Valores = oja/sanger')
+    parser.add_argument("-dim", "--dim_salida", default=3,
+                        help='Dimension de salida para ejercicio 1.')
+
+    parser.add_argument("-red_ej1", "--red_ej1", default=None,
+                        help='Red del ejercicio 1, para utilizarla en el ejercicio 2 para reducir dimensiones.')
 
 
     args = parser.parse_args()
@@ -27,9 +32,12 @@ def iniciar():
     eta = float(args.eta)
     epochs = int(args.epochs)
     regla = args.regla
+    dim_salida = int(args.dim_salida)
 
     red_desde_archivo = args.red_desde_archivo
     red_hacia_archivo = args.red_hacia_archivo
+
+    red_ej1 = args.red_ej1
 
     os.system('clear')
     print 'TP2 - Aprendizaje No Supervisado'
@@ -38,4 +46,5 @@ def iniciar():
     print "Red a Utilizar: " + (red_desde_archivo if (red_desde_archivo is not None) else 'Nueva')
     print '-------------------------------------------------------------------------'
 
-    return filepath, eta, epochs, regla, red_desde_archivo, red_hacia_archivo
+    return filepath, eta, epochs, regla, dim_salida, red_desde_archivo, red_hacia_archivo, red_ej1
+

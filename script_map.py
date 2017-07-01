@@ -12,7 +12,7 @@ import encoder as encoder
 
 ######### PARSEO DE PARAMETROS ##############
 
-filepath, eta, epochs, regla, red_desde_archivo, red_hacia_archivo = params.iniciar()
+filepath, eta, epochs, regla, dim_salida, red_desde_archivo, red_hacia_archivo, red_ej1 = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 
@@ -56,20 +56,27 @@ sigma = 7
 
 if red_desde_archivo:
     SOM = encoder.from_json(red_desde_archivo, 2)
-    resultados = SOM.predict(dataset_train, categorias_verificacion)
 else:
     SOM = som.SelfOrganizedMap(n_entrada, map_size)
 
-    if filepath == "sanger_network.data":
-        coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)
-        SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
-        resultados = SOM.predict(coordenadas, categorias_verificacion)
-    else:
-        SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
-        resultados = SOM.predict(dataset_train, categorias_verificacion)
+# Si proveo red del ej1 para redurcir, entonces no tomar los documentos enteros sino
+# Reducir dimensionalidad utilizando dicha red
+if red_ej1 is not None:
+    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
+    SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
+    resultados = SOM.predict(coordenadas, categorias_verificacion)
+
+# Si no hay red ej1, usar dataset default
+else:
+    SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
+    resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
-# ######## OBTENCION COORDENADAS ##############
+########## OUTPUT A JSON ##############
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, SOM, 2)
+
+########## OBTENCION COORDENADAS ##############
 
 cmap = colors.ListedColormap(
     [
@@ -98,6 +105,3 @@ plt.colorbar(heatmap, ticks=range(11))
 
 plt.show()
 
-# ######## OUTPUT A JSON ##############
-if red_hacia_archivo:
-    encoder.to_json(red_hacia_archivo, SOM, 2)
