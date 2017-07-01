@@ -55,13 +55,13 @@ Luego de esta etapa de entrenamiento, procesamos los datos de validación:
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_validation.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Oja - 3 dimensiones - 100 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/oja/oja_3salida_100ep_validation_3.png}
-  \caption{Oja - 3 dimensiones - 200 épocas}
+  \caption{Oja - 3 dimensiones - 100 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
@@ -69,7 +69,7 @@ Luego de esta etapa de entrenamiento, procesamos los datos de validación:
 \begin{figure}[h]
   \begin{center}
     \includegraphics[scale=0.65]{../img/ej1/oja/oja_3salida_100ep_validation_2.png}
-  \caption{Oja - 3 dimensiones - 200 épocas - Datos Validación}
+  \caption{Oja - 3 dimensiones - 100 épocas - Datos Validación}
   \end{center}
 \end{figure}
 
@@ -185,13 +185,13 @@ medianamente agrupadas pero con alto nivel de disgregación.
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation.png}
-  \caption{Sanger - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 100 épocas}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=1\linewidth, scale=1]{../img/ej1/sanger/sanger_3salida_100ep_validation_3.png}
-  \caption{Sanger - 3 dimensiones - 200 épocas}
+  \caption{Sanger - 3 dimensiones - 100 épocas}
   \label{fig:sub2}
 \end{subfigure}
 \end{figure}
@@ -199,7 +199,7 @@ medianamente agrupadas pero con alto nivel de disgregación.
 \begin{figure}[h]
   \begin{center}
     \includegraphics[scale=0.65]{../img/ej1/sanger/sanger_3salida_100ep_validation_2.png}
-  \caption{Sanger - 3 dimensiones - 200 épocas - Datos Validación}
+  \caption{Sanger - 3 dimensiones - 100 épocas - Datos Validación}
   \end{center}
 \end{figure}
 
@@ -502,7 +502,39 @@ En estas últimas se nota menos precisión en los clusters y mayor solapamiento.
 resultados que obtuvimos en todo el ejercicio 1. En el caso de esta regla, la ampliación a 9 dimensiones mostró una diferencia notable en la calidad de la solución.
 
 \newpage
-\subsection{Ejercicio 2}
+\subsection{Ejercicio 2 - Mapeo de características}
+
+Para el segundo ejercicio, los experimentos consistieron en variar la cantidad de neuronas del mapa que podían ser activadas, en conjunto con la cantidad de épocas y la división de las mismas en ordenamiento y convergencia. Intentamos variar estos factores y observar diferencias en los gráficos de estilo mapa de calor generados en base a las categorías que activaron en mayor medida a cada una de las neuronas del mapa.
+
+Comenzamos realizando clasificaciones con 200 épocas como el primer ejercicio, pero, si bien se pudieron apreciar algunos agrupamientos, no era lo esperado. Dado que además vimos que corría mucho más rápido que en el primer ejercicio, decidimos además subir las épocas a 1000 como se propone en lo visto en clase. Allí observamos una clasificación mejor, con agrupamientos bien definidos.
+
+Estas pruebas fueron hechas tanto para el mapeo de los documentos directamente (donde cada neurona del mapa tiene 850 vectores de entrada), y para las 3 y 9 componentes principales que se obtienen de las redes generadas en el primer ejercicio. Para estos dos últimos casos, utilizaremos las redes generadas con el algoritmo de Sanger, dado que fue el que nos devolvió los mejores resultados.
+
+Finalmente, comparamos los resultados obtenidos entre las 3 opciones para dar nuestra visión de cual funcionó mejor en base a nuestros experimentos.
+
+\subsubsection{Mapeo de documentos con 850 atributos}
+
+En primera instancia, planteamos un experimento utilizando 200 épocas, lo cual no produjo buenos resultados como mencionamos anteriormente. En consecuencia, aumentamos las épocas a 1000 como sugerencia de lo visto en clase. Decidimos tomar un mapa de neuronas de 10 x 10 como primera prueba. Nos pareció un buen número para empezar para darle oportunidad a cada neurona de que sea activada por más de un documento (810 documentos de entrenamiento sobre 100 neuronas del mapa). 
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../img/map_1000ep_850en.png}
+  \caption{Mapa 10x10 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
+  \end{center}
+\end{figure}
+
+Si bien hay un idea de agrupamiento no es lo que esperábamos, por lo cual decidimos variar el parámetro T1 del cálculo del sigma inicial para que la función logaritmo del sigma que nosotros pasamos por parámetro le aplique logaritmo en base 2 en vez de logaritmo natural. Luego, volvimos a correr el experimento y obtuvimos mejores resultados.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../img/map_1000ep_850en.png}
+  \caption{Mapa 10x10 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
+  \end{center}
+\end{figure}
+
+Sin embargo, encontramos muy extraño que haya tantos blancos en el mapa, que significa que esas neuronas que están blancas no fueron activadas por ningún documento cuando realizamos la última pasada de los documentos sobre la red entrenada para armar el mapa. Esto nos desconcertó de si era correcto o no, con lo cual recurrimos a consultarlo con los profesores, lo que nos permitió entender que esto no debería suceder y que las posibles causas podían ser que nuestro mapa era demasiado grande, o que teníamos algún problema en la función de vecindad y/o las fases de ordenamiento y convergencia y/o nuestro código en sí.
+
+Luego de revisar nuestra implementación, descubrimos que las fases de ordenamiento y convergencia no estaban muy bien definidas y que durante todas las épocas tanto el sigma como el eta no dejaban de ser \textit{enfriados}. Es por eso que decidimos plantear que de las 1000 épocas, dos tercios de las mismas sean de ordenamiento y el resto de convergencia. Además, decidimos achicar el área de nuestro mapa de neuronas de 10x10 a 8x8 y volvimos a correr el experimento.
 
 \newpage
 \section{Soluciones Óptimas Propuestas}

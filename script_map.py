@@ -51,8 +51,8 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 ######## TRAINING ##############
 
 n_entrada = len(atributos[0])
-map_size = 10
-sigma = 5
+map_size = 7
+sigma = 7
 
 if red_desde_archivo:
     SOM = encoder.from_json(red_desde_archivo, 2)
@@ -81,10 +81,11 @@ cmap = colors.ListedColormap(
         (121.0/256.0, 85.0/256.0, 72.0/256.0, 1),
         (255.0/256.0, 152.0/256.0, 0.0/256.0, 1),
         (156.0/256.0, 39.0/256.0, 176.0/256.0, 1),
-        (96.0/256.0, 125.0/256.0, 139.0/256.0, 1)
+        (96.0/256.0, 125.0/256.0, 139.0/256.0, 1),
+        (63.0/256.0, 81.0/256.0, 181.0/256.0, 1)
     ]
 )
-bounds = range(10)
+bounds = range(11)
 norm = colors.BoundaryNorm(bounds, cmap.N)
 
 column_labels = range(map_size)
@@ -92,7 +93,7 @@ row_labels = range(map_size)
 heatmap = plt.pcolor(resultados, cmap=cmap, norm=norm)
 heatmap.axes.set_xticklabels = column_labels
 heatmap.axes.set_yticklabels = row_labels
-plt.colorbar(heatmap, ticks=range(10))
+plt.colorbar(heatmap, ticks=range(11))
 
 plt.show()
 
