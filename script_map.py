@@ -7,6 +7,7 @@ from matplotlib import colors
 from mpl_toolkits.mplot3d import Axes3D
 import self_organized_map as som
 import parameters as params
+import encoder as encoder
 
 
 ######### PARSEO DE PARAMETROS ##############
@@ -53,15 +54,18 @@ n_entrada = len(atributos[0])
 map_size = 10
 sigma = 5
 
-SOM = som.SelfOrganizedMap(n_entrada, map_size)
-
-if filepath == "sanger_network.data":
-    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)    
-    SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
-    resultados = SOM.predict(coordenadas, categorias_verificacion)
+if red_desde_archivo:
+    SOM = encoder.from_json(red_desde_archivo, 2)
 else:
-    SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
-    resultados = SOM.predict(dataset_train, categorias_verificacion)
+    SOM = som.SelfOrganizedMap(n_entrada, map_size)
+
+    if filepath == "sanger_network.data":
+        coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, filepath)
+        SOM.train_con_documentos(coordenadas, categorias_verificacion, sigma=sigma, epochs=epochs)
+        resultados = SOM.predict(coordenadas, categorias_verificacion)
+    else:
+        SOM.train_con_documentos(dataset_train, categorias_verificacion, sigma=sigma, epochs=epochs)
+        resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
 # ######## OBTENCION COORDENADAS ##############
@@ -127,5 +131,5 @@ plt.show()
 # plt.show()
 
 # ######## OUTPUT A JSON ##############
-# if red_hacia_archivo:
-#     encoder.to_json(red_hacia_archivo, PPN)
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, SOM, 2)
