@@ -694,7 +694,10 @@ El tiempo de ejecución total con 9 componentes fue de: ~721 segundos. Observand
 \item \textbf{¿Qué interpretación le puede dar a estos resultados?} 
 
 Lo que podemos interpretar es que tanto el algoritmo de Oja como el de Sanger, logran realizar una clusterización de los documentos según 
-su categoría, entrenándose sin saber a priori la categoría de cada documento. 
+su categoría, entrenándose sin saber a priori la categoría de cada documento. Luego con las categorías de cada documento confirmamos esta 
+clusterización. Esto significa que los documentos de cada categoría exponen algún tipo de patrón en sus atributos que los permite agrupar en 
+diferentes clusters. Como resultado, Oja y Sanger (Sanger en mejor medida) logran crear una red que permite determinar la categoría de nuevos
+documentos a partir de sus componentes principales con un buen nivel de precisión.
 
 \item \textbf{¿Qué tan buenos son estos modelos específicos para hacer una clasificación de los documentos?}
 
