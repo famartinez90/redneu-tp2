@@ -8,7 +8,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import self_organized_map as som
 import parameters as params
 import encoder as encoder
-
+import time
 
 ######### PARSEO DE PARAMETROS ##############
 
@@ -69,10 +69,14 @@ else:
 # Reducir dimensionalidad utilizando dicha red
 if red_ej1 is not None:
     coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
+    coordenadas_validation = SOM.translate_documentos_to_coordenadas(dataset_validation, red_ej1)
 
     # Si la red es nueva, entrenarla
     if red_desde_archivo is None:
+        start = time.time()
         SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
 
     resultados = SOM.predict(coordenadas, categorias_verificacion)
 
@@ -80,7 +84,10 @@ if red_ej1 is not None:
 else:
     # Si la red es nueva, entrenarla
     if red_desde_archivo is None:
+        start = time.time()
         SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
 
     resultados = SOM.predict(dataset_train, categorias_verificacion)
 
@@ -116,13 +123,13 @@ heatmap.axes.set_xticklabels = column_labels
 heatmap.axes.set_yticklabels = row_labels
 m = plt.colorbar(heatmap, ticks=range(11))
 
-# plt.show()
+plt.show()
 
 ######### CALCULO DEL ERROR CON VALIDACION ###########
 
 if red_ej1 is not None:
     # resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
-    errores_x_categoria = SOM.validation_error(coordenadas, resultados, categorias_verificacion, int(len(matrix) * 0.9))
+    errores_x_categoria = SOM.validation_error(coordenadas_validation, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 else:
     # resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
     errores_x_categoria = SOM.validation_error(dataset_validation, resultados, categorias_verificacion, int(len(matrix) * 0.9))

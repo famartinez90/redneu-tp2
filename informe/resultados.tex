@@ -601,6 +601,18 @@ Finalmente, para el mapa de 7x7, calculamos el error de predicción de categorí
 
 Como se puede apreciar, la categorización es excelente, todos los documentos de nuestro conjunto de validación mapean a neuronas que se corresponden con su categoría, que era nuestro objetivo para esta tipo de red.
 
+Tiempo de corrida: ~750 segundos
+
+\subsubsection{Mapeo de documentos con 3 componentes principales}
+
+Para este experimento, en vez de utilizar los 850 atributos de cada documento para hacer el mapeo con nuestro mapa de neuronas, aprovecharemos las redes generadas en el ejercicio 1 para obtener las componentes principales de cada uno de los documentos. Luego, utilizaremos estas componentes como entrada de las neuronas de nuestro mapa, y de esta manera comparar con lo obtenido en la sección anterior. 
+
+La red entrenada del ejercicio 1 que utilizaremos para obtener las componentes será una red entrenada con el algoritmo de Sanger de 200 épocas de entrenamiento, que fue la que arrojó los mejores resultados en ese ejercicio.
+
+Para esta sección vamos a probar algunas de las configuraciones que utilizamos en la sección anterior para analizar que tanto varían los resultados.
+
+Tiempo de corrida 3comp: ~680 segundos
+
 \newpage
 \section{Soluciones Óptimas Propuestas}
 
