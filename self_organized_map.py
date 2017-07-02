@@ -72,7 +72,7 @@ class SelfOrganizedMap(object):
 
         return self
 
-    def predict(self, documentos, categorias, offset=0):
+    def predict(self, documentos, categorias):
         resultados = []
 
         for r1, row in enumerate(self.map):
@@ -95,9 +95,34 @@ class SelfOrganizedMap(object):
                         min_distancia = distancia
                         winner_index = np.array([i, j])
 
-            resultados[winner_index[0]][winner_index[1]].append(categorias[k+offset])
+            resultados[winner_index[0]][winner_index[1]].append(categorias[k])
 
         return self.determinar_categoria_ganadora(resultados)
+
+    def validation_error(self, docs_validation, resultados_training, categorias, offset=0):
+        error_x_categoria = [(x+1, 0) for x in range(9)]
+
+        for k, documento in enumerate(docs_validation):
+            winner_index = []
+            min_distancia = float('inf')
+
+            # Calculo todas las salidas de las neuronas de mi mapa
+            for i, row in enumerate(self.map):
+                for j, _ in enumerate(row):
+                    distancia = self.distancia_geometrica(documento, self.map[i][j]['pesos'])
+
+                    # Voy calculando cual es la neurona ganadora
+                    if distancia < min_distancia:
+                        min_distancia = distancia
+                        winner_index = np.array([i, j])
+
+            categoria_training = resultados_training[winner_index[0]][winner_index[1]]
+
+            if categoria_training != categorias[k+offset]:
+                print 'error en '+str(categoria_training)
+                error_x_categoria[categoria_training] = (categoria_training, error_x_categoria[categoria_training][1]+1)
+
+        return error_x_categoria
 
     def print_nice(self, data):
         for row in data:

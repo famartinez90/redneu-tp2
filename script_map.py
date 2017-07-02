@@ -109,16 +109,17 @@ m = plt.colorbar(heatmap, ticks=range(11))
 ######### CALCULO DEL ERROR CON VALIDACION ###########
 
 if filepath == "sanger_network.data":
-    resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
+    # resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
+    errores_x_categoria = SOM.validation_error(coordenadas, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 else:
-    resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
+    # resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
+    errores_x_categoria = SOM.validation_error(dataset_validation, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 
-errores_x_categoria = [(x+1, 0) for x in range(9)]
 
-for i, row in enumerate(resultados_validation):
-    for j, _ in enumerate(row):
-        if resultados[i][j] != resultados_validation[i][j]:
-            errores_x_categoria[resultados[i][j] - 1] = (errores_x_categoria[resultados[i][j] - 1][0], errores_x_categoria[resultados[i][j] - 1][1] + 1)
+# for i, row in enumerate(resultados_validation):
+#     for j, _ in enumerate(row):
+#         if resultados[i][j] != resultados_validation[i][j]:
+#             errores_x_categoria[resultados[i][j] - 1] = (errores_x_categoria[resultados[i][j] - 1][0], errores_x_categoria[resultados[i][j] - 1][1] + 1)
 
 fig = plt.figure()
 chart_bar = fig.add_subplot(111)

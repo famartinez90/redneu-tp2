@@ -518,7 +518,7 @@ En primera instancia, planteamos un experimento utilizando 200 épocas, lo cual 
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/map_1000ep_850en.png}
+    \includegraphics[scale=0.6]{../img/map_1000ep_850en.png}
   \caption{Mapa 10x10 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
   \end{center}
 \end{figure}
@@ -527,7 +527,7 @@ Si bien hay un idea de agrupamiento no es lo que esperábamos, por lo cual decid
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/map_1000ep_850en_v2.png}
+    \includegraphics[scale=0.6]{../img/map_1000ep_850en_v2.png}
   \caption{Mapa 10x10 - 850 ejes x neurona - 1000 épocas - Sigma 5 - Entrenamiento}
   \end{center}
 \end{figure}
@@ -572,21 +572,34 @@ Con los resultados podemos ver que la presencia de blancos disminuyo ligeramente
 
 Como se puede apreciar, el problema de clusterización se resuelve en su totalidad utilizando 750 épocas para el ordenamiento y 250 para la convergencia. Por otro lado, el problema de los blancos sigue presente, lo cual nos lleva nuevamente a replantear nuestros parámetros para eliminar este comportamiento en su totalidad. Es por eso que decidimos utilizar un mapa de neuronas más pequeño, de 7x7 en vez de 8x8. 
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/map7x7_1000ep_850en_sigma7_faseord750.png}
+    \includegraphics[scale=0.6]{../img/map7x7_1000ep_850en_sigma7_faseord750.png}
   \caption{Mapa 7x7 - 850 ejes x neurona - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
   \end{center}
 \end{figure}
 
 Ahora sí, en este experimento conseguimos los resultados esperados, con lo cual confirmamos que nuestro problema era que el mapa de neuronas estaba demasiado grande. Un detalle importante es que luego de realizar este experimento nos dimos cuenta que las categorías 8 y 9 estaban siendo coloreadas de la misma manera, con lo cual tuvimos que ajustar el mapa para que salga correctamente.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[scale=0.4]{../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png}
+    \includegraphics[scale=0.6]{../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png}
   \caption{Mapa 7x7 - 850 ejes x neurona - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
   \end{center}
 \end{figure}
+
+Hicimos también pruebas variando el ancho del mapa de neuronas para, en vez de tener un mapa cuadrado, sea rectangular. En este caso, intentamos con mapas de 7x6, 7x8 y 7x9. Sin embargo, no obtuvimos mejores clusterizaciones que con el de 7x7.
+
+Finalmente, para el mapa de 7x7, calculamos el error de predicción de categoría del mismo utilizando los datos de validación. O sea, para cada uno de los documentos que seleccionamos para validación, chequeamos cual es la neurona que más activa y comparamos la categoría que más activa esa neurona con la categoría del documento (de validación) que estamos chequeando. Por cada diferencia de categoría entre el documento validado y la categoría que más activa la neurona, la contamos para luego mostrarla en el gráfico.
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[scale=0.6]{../img/map7x7_1000ep_850en_sigma7_faseord750_corregido_errores.png}
+  \caption{Error de categoría predecida entre datos de validación con las categorías que activan las neuronas}
+  \end{center}
+\end{figure}
+
+Como se puede apreciar, la categorización es excelente, todos los documentos de nuestro conjunto de validación mapean a neuronas que se corresponden con su categoría, que era nuestro objetivo para esta tipo de red.
 
 \newpage
 \section{Soluciones Óptimas Propuestas}
