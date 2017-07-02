@@ -1,0 +1,622 @@
+\section{Anexo - Código}
+Incluimos aquí el código python de la aplicación. La explicación del contenido de cada archivo puede encontrarse en la introducción del informe.
+
+\subsection{script.py}
+
+\begin{changemargin}{-2.0cm}{-1.5cm} 
+\begin{verbatim}
+
+# -*- coding: utf-8 -*-
+import csv
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
+from mpl_toolkits.mplot3d import Axes3D
+import self_organized_map as som
+import parameters as params
+import encoder as encoder
+import time
+
+######### PARSEO DE PARAMETROS ##############
+
+filepath, eta, epochs, regla, dimensiones, red_desde_archivo, 
+  red_hacia_archivo, red_ej1 = params.iniciar()
+
+######### PARSEO DE DATOS ##############
+
+f = open('tp2_training_dataset.csv', 'rb')
+reader = csv.reader(f)
+categorias_verificacion = []
+atributos = []
+
+for row in reader:
+    categoria = float(row.pop(0))
+    categorias_verificacion.append(categoria)
+    atributos.append([float(x) for x in row])
+
+f.close()
+
+######## MEDIA 0 POR COLUMNA ##############
+
+matrix = np.array(atributos)
+column_means = np.mean(matrix, axis=0)
+
+for i, mean in enumerate(column_means):
+    for j, _ in enumerate(matrix):
+        matrix[j][i] = matrix[j][i] - mean
+
+# Aca ordenamos al azar los documentos y sus categorias
+# de manera de siempre agarrar distintos conjuntos de train y validation
+rnd_state = np.random.get_state()
+np.random.shuffle(matrix)
+np.random.set_state(rnd_state)
+np.random.shuffle(categorias_verificacion)
+
+
+dataset_train = matrix[:int(len(matrix) * 0.9)]
+dataset_validation = matrix[int(len(matrix) * 0.9):]
+
+######## TRAINING ##############
+
+# Si se va a ejecutar reduciendo dimensiones con redes del ej1, tomar nentrada del tam apropiado
+if red_ej1 is not None:
+    n_entrada = dimensiones
+else:
+    n_entrada = len(atributos[0])
+
+map_size = 7
+sigma = 7
+longer_width = 0
+
+if red_desde_archivo:
+    SOM = encoder.from_json(red_desde_archivo, 2)
+else:
+    SOM = som.SelfOrganizedMap(n_entrada, map_size, offset_width_map=longer_width)
+
+# Si proveo red del ej1 para redurcir, entonces no tomar los documentos enteros sino
+# Reducir dimensionalidad utilizando dicha red
+if red_ej1 is not None:
+    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
+    coordenadas_validation = SOM.translate_documentos_to_coordenadas(dataset_validation, red_ej1)
+
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        start = time.time()
+        SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
+
+    resultados = SOM.predict(coordenadas, categorias_verificacion)
+
+# Si no hay red ej1, usar dataset default
+else:
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        start = time.time()
+        SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
+
+    resultados = SOM.predict(dataset_train, categorias_verificacion)
+
+
+########## OUTPUT A JSON ##############
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, SOM, 2)
+
+########## OBTENCION COORDENADAS ##############
+
+cmap = colors.ListedColormap(
+    [
+        'white', 
+        (51.0/256.0, 51.0/256.0, 51.0/256.0, 1), 
+        (33.0/256.0, 150.0/256.0, 243.0/256.0, 1),
+        (76.0/256.0, 175.0/256.0, 80.0/256.0, 1),
+        (244.0/256.0, 67.0/256.0, 54.0/256.0, 1),
+        (255.0/256.0, 235.0/256.0, 59.0/256.0, 1),
+        (121.0/256.0, 85.0/256.0, 72.0/256.0, 1),
+        (255.0/256.0, 152.0/256.0, 0.0/256.0, 1),
+        (156.0/256.0, 39.0/256.0, 176.0/256.0, 1),
+        (96.0/256.0, 125.0/256.0, 139.0/256.0, 1),
+        (63.0/256.0, 81.0/256.0, 181.0/256.0, 1)
+    ]
+)
+bounds = range(11)
+norm = colors.BoundaryNorm(bounds, cmap.N)
+
+column_labels = range(map_size)
+row_labels = range(map_size+longer_width)
+heatmap = plt.pcolor(np.array(resultados), cmap=cmap, norm=norm)
+heatmap.axes.set_xticklabels = column_labels
+heatmap.axes.set_yticklabels = row_labels
+m = plt.colorbar(heatmap, ticks=range(11))
+
+plt.show()
+
+######### CALCULO DEL ERROR CON VALIDACION ###########
+
+if red_ej1 is not None:
+    errores_x_categoria = SOM.validation_error(coordenadas_validation, resultados, 
+      categorias_verificacion, int(len(matrix) * 0.9))
+else:
+    errores_x_categoria = SOM.validation_error(dataset_validation, resultados, 
+      categorias_verificacion, int(len(matrix) * 0.9))
+
+fig = plt.figure()
+chart_bar = fig.add_subplot(111)
+
+y = [q[1] for q in errores_x_categoria]
+x = [q[0] for q in errores_x_categoria]
+width = 1/1.5
+chart_bar.bar(x, y, width, color=(63.0/256.0, 81.0/256.0, 181.0/256.0, 1))
+
+plt.show()
+\end{verbatim}
+\end{changemargin}
+
+\newpage
+\subsection{network.py}
+
+\begin{changemargin}{-2.0cm}{-1.5cm} 
+\begin{verbatim}
+# -*- coding: utf-8 -*-
+import numpy as np
+
+class UnsupervisedLearningNetwork(object):
+
+    def __init__(self, n_entrada=1, n_salida=3, basic_init_pesos=None):
+        self.pesos_red = list()
+
+        # Para cargar redes armadas con pesos ya entrenados
+        if basic_init_pesos is not None:
+            self.pesos_red = basic_init_pesos
+        else:
+            for _ in range(n_salida):
+                self.pesos_red.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
+
+    def train_ej1(self, dataset, eta=0.01, epochs=10, algoritmo="sanger"):
+
+        # for X en D:
+        #     Y = X . W
+        #     for j en [1..M]:
+        #         for i en [1..N]:
+        #             X~_i = 0
+        #             for k en [1..Q]
+        #                 X~_i += Y_k . W_ik
+        #             DeltaW_ij = eta . (X_i - X~_i) . Y_j
+        #     W += DeltaW
+
+        for ep in range(epochs):
+            
+            for _, documento in enumerate(dataset):
+                y = list()
+
+                # Recorro las neuronas de salida 2 veces porque necesito tener
+                # calculadas las salidas de las mismas para hacer Oja
+                for n_neurona in range(len(self.pesos_red)):
+                    salida_neurona = np.dot(documento, self.pesos_red[n_neurona]['pesos'])
+                    y.append(salida_neurona)
+
+                # Para todas las neuronas de salida, se actualizan los pesos de
+                # las 850 entradas para cada documento
+                for n_neurona in range(len(self.pesos_red)):           
+                    delta_w = list()
+                    
+                    for i, atributo in enumerate(documento):
+                        x = 0
+
+                        # Las salidas utilizadas para actualizar los pesos dependen
+                        # de si se usa Oja o Sanger
+                        for k in range(self.calcular_intervalo(algoritmo, n_neurona)):
+                            x += y[k] * self.pesos_red[k]['pesos'][i]
+
+                        delta_w.append(eta * (atributo - x) * salida_neurona)
+
+                    # Actualizacion de los pesos
+                    self.pesos_red[n_neurona]['pesos'] = 
+                      np.sum([self.pesos_red[n_neurona]['pesos'], delta_w], axis=0)
+            
+            print 'Finalizada epoca '+str(ep)
+
+        return self
+
+    def predict_coordenadas_ej1(self, documento):
+        coordenadas = list()
+
+        for n_neurona in range(len(self.pesos_red)):
+            salida_neurona = np.dot(documento, self.pesos_red[n_neurona]['pesos'])
+            coordenadas.append(salida_neurona)
+
+        return coordenadas
+
+    def calcular_intervalo(self, algoritmo, neurona_actual):
+        if algoritmo == "hebb":
+            return 0
+        
+        if algoritmo == "oja1":
+            return 1
+
+        if algoritmo == "oja":
+            return len(self.pesos_red)
+        
+        if algoritmo == "sanger":
+            return neurona_actual+1
+
+\end{verbatim}
+\end{changemargin}
+
+\newpage
+\subsection{script\_map.py}
+
+\begin{changemargin}{-2.0cm}{-1.5cm} 
+\begin{verbatim}
+# -*- coding: utf-8 -*-
+import csv
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
+from mpl_toolkits.mplot3d import Axes3D
+import self_organized_map as som
+import parameters as params
+import encoder as encoder
+import time
+
+######### PARSEO DE PARAMETROS ##############
+
+filepath, eta, epochs, regla, dimensiones, red_desde_archivo, red_hacia_archivo, red_ej1 = 
+  params.iniciar()
+
+######### PARSEO DE DATOS ##############
+
+f = open('tp2_training_dataset.csv', 'rb')
+reader = csv.reader(f)
+categorias_verificacion = []
+atributos = []
+
+for row in reader:
+    categoria = float(row.pop(0))
+    categorias_verificacion.append(categoria)
+    atributos.append([float(x) for x in row])
+
+f.close()
+
+######## MEDIA 0 POR COLUMNA ##############
+
+matrix = np.array(atributos)
+column_means = np.mean(matrix, axis=0)
+
+for i, mean in enumerate(column_means):
+    for j, _ in enumerate(matrix):
+        matrix[j][i] = matrix[j][i] - mean
+
+# Aca ordenamos al azar los documentos y sus categorias
+# de manera de siempre agarrar distintos conjuntos de train y validation
+rnd_state = np.random.get_state()
+np.random.shuffle(matrix)
+np.random.set_state(rnd_state)
+np.random.shuffle(categorias_verificacion)
+
+
+dataset_train = matrix[:int(len(matrix) * 0.9)]
+dataset_validation = matrix[int(len(matrix) * 0.9):]
+
+######## TRAINING ##############
+
+# Si se va a ejecutar reduciendo dimensiones con redes del ej1, tomar nentrada del tam apropiado
+if red_ej1 is not None:
+    n_entrada = dimensiones
+else:
+    n_entrada = len(atributos[0])
+
+map_size = 7
+sigma = 7
+longer_width = 0
+
+if red_desde_archivo:
+    SOM = encoder.from_json(red_desde_archivo, 2)
+else:
+    SOM = som.SelfOrganizedMap(n_entrada, map_size, offset_width_map=longer_width)
+
+# Si proveo red del ej1 para redurcir, entonces no tomar los documentos enteros sino
+# Reducir dimensionalidad utilizando dicha red
+if red_ej1 is not None:
+    coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
+    coordenadas_validation = 
+      SOM.translate_documentos_to_coordenadas(dataset_validation, red_ej1)
+
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        start = time.time()
+        SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
+
+    resultados = SOM.predict(coordenadas, categorias_verificacion)
+
+# Si no hay red ej1, usar dataset default
+else:
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        start = time.time()
+        SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+        end = time.time()
+        print 'Tiempo de corrida: '+ str(end - start)
+
+    resultados = SOM.predict(dataset_train, categorias_verificacion)
+
+
+########## OUTPUT A JSON ##############
+if red_hacia_archivo:
+    encoder.to_json(red_hacia_archivo, SOM, 2)
+
+########## OBTENCION COORDENADAS ##############
+
+cmap = colors.ListedColormap(
+    [
+        'white', 
+        (51.0/256.0, 51.0/256.0, 51.0/256.0, 1), 
+        (33.0/256.0, 150.0/256.0, 243.0/256.0, 1),
+        (76.0/256.0, 175.0/256.0, 80.0/256.0, 1),
+        (244.0/256.0, 67.0/256.0, 54.0/256.0, 1),
+        (255.0/256.0, 235.0/256.0, 59.0/256.0, 1),
+        (121.0/256.0, 85.0/256.0, 72.0/256.0, 1),
+        (255.0/256.0, 152.0/256.0, 0.0/256.0, 1),
+        (156.0/256.0, 39.0/256.0, 176.0/256.0, 1),
+        (96.0/256.0, 125.0/256.0, 139.0/256.0, 1),
+        (63.0/256.0, 81.0/256.0, 181.0/256.0, 1)
+    ]
+)
+bounds = range(11)
+norm = colors.BoundaryNorm(bounds, cmap.N)
+
+column_labels = range(map_size)
+row_labels = range(map_size+longer_width)
+heatmap = plt.pcolor(np.array(resultados), cmap=cmap, norm=norm)
+heatmap.axes.set_xticklabels = column_labels
+heatmap.axes.set_yticklabels = row_labels
+m = plt.colorbar(heatmap, ticks=range(11))
+
+plt.show()
+
+######### CALCULO DEL ERROR CON VALIDACION ###########
+
+if red_ej1 is not None:
+    errores_x_categoria = SOM.validation_error(coordenadas_validation, 
+      resultados, categorias_verificacion, int(len(matrix) * 0.9))
+else:
+    errores_x_categoria = SOM.validation_error(dataset_validation, 
+      resultados, categorias_verificacion, int(len(matrix) * 0.9))
+
+fig = plt.figure()
+chart_bar = fig.add_subplot(111)
+
+y = [q[1] for q in errores_x_categoria]
+x = [q[0] for q in errores_x_categoria]
+width = 1/1.5
+chart_bar.bar(x, y, width, color=(63.0/256.0, 81.0/256.0, 181.0/256.0, 1))
+
+plt.show()
+
+\end{verbatim}
+\end{changemargin}
+
+\newpage
+\subsection{self\_organized\_map.py}
+
+\begin{changemargin}{-2.0cm}{-1.5cm} 
+\begin{verbatim}
+# -*- coding: utf-8 -*-
+from math import e, log
+import numpy as np
+import encoder as encoder
+
+class SelfOrganizedMap(object):
+
+    def __init__(self, n_entrada = 1, map_size = 7, basic_init_pesos=None, offset_width_map=0):
+
+        # Para cargar redes armadas con pesos ya entrenados
+        if basic_init_pesos is not None:
+            self.map = basic_init_pesos
+        else:
+            matrix = []
+
+            for _ in range(map_size):
+                row = []
+                for _ in range(map_size+offset_width_map):
+                    row.append({'pesos': np.random.uniform(-0.1, 0.1, n_entrada)})
+
+                matrix.append(row)
+
+            self.map = matrix
+
+    def translate_documentos_to_coordenadas(self, documentos, sanger_network_file):
+        ppn = encoder.from_json(sanger_network_file, 1)
+        coordenadas = []
+
+        for documento in documentos:
+            coordenadas.append(ppn.predict_coordenadas_ej1(documento))
+
+        return coordenadas
+
+    def train_con_documentos(self, documentos, sigma=5, eta=0.1, epochs=10):
+        iteration = 0.0
+        sigma_0 = sigma
+        eta_0 = eta
+        t1_sigma = float(epochs) / float(log(sigma_0, 2))
+        t2_eta = float(epochs)
+
+        for ep in range(epochs):
+            
+            for _, documento in enumerate(documentos):
+                winner_index = []
+                min_distancia = float('inf')
+
+                # Calculo todas las salidas de las neuronas de mi mapa
+                for i, row in enumerate(self.map):
+                    for j, _ in enumerate(row):
+                        distancia = self.distancia_geometrica(documento, self.map[i][j]['pesos'])
+
+                        # Voy calculando cual es la neurona ganadora
+                        if distancia < min_distancia:
+                            min_distancia = distancia
+                            winner_index = np.array([i, j])
+            
+                for i, row in enumerate(self.map):
+                    for j, _ in enumerate(row):
+
+                        # Actualizacion de los pesos de las
+                        # neuronas con la funcion de vecindad
+                        h = self.funcion_vecindad(np.array([i, j]), winner_index, sigma)
+
+                        self.map[i][j]['pesos'] += 
+                          eta * h * np.subtract(documento, self.map[i][j]['pesos'])
+            
+            if iteration < (epochs * 3 / 4):
+                sigma, eta = self.cooling(iteration, sigma_0, t1_sigma, eta_0, t2_eta)
+            
+            iteration += 1
+
+            print 'Finalizada epoca '+str(ep)
+
+        return self
+
+    def predict(self, documentos, categorias):
+        resultados = []
+
+        for r1, row in enumerate(self.map):
+            resultados.append([])
+
+            for _ in enumerate(row):
+                resultados[r1].append([])
+
+        for k, documento in enumerate(documentos):
+            winner_index = []
+            min_distancia = float('inf')
+
+            # Calculo todas las salidas de las neuronas de mi mapa
+            for i, row in enumerate(self.map):
+                for j, _ in enumerate(row):
+                    distancia = self.distancia_geometrica(documento, self.map[i][j]['pesos'])
+
+                    # Voy calculando cual es la neurona ganadora
+                    if distancia < min_distancia:
+                        min_distancia = distancia
+                        winner_index = np.array([i, j])
+
+            resultados[winner_index[0]][winner_index[1]].append(categorias[k])
+
+        return self.determinar_categoria_ganadora(resultados)
+
+    def validation_error(self, docs_validation, resultados_training, categorias, offset=0):
+        error_x_categoria = [(x+1, 0) for x in range(9)]
+
+        for k, documento in enumerate(docs_validation):
+            winner_index = []
+            min_distancia = float('inf')
+
+            # Calculo todas las salidas de las neuronas de mi mapa
+            for i, row in enumerate(self.map):
+                for j, _ in enumerate(row):
+                    distancia = self.distancia_geometrica(documento, self.map[i][j]['pesos'])
+
+                    # Voy calculando cual es la neurona ganadora
+                    if distancia < min_distancia:
+                        min_distancia = distancia
+                        winner_index = np.array([i, j])
+
+            categoria_training = resultados_training[winner_index[0]][winner_index[1]]
+
+            if categoria_training != categorias[k+int(offset)]:
+                error_x_categoria[categoria_training-1] = 
+                  (categoria_training, error_x_categoria[categoria_training-1][1]+1)
+
+        return error_x_categoria
+
+    def print_nice(self, data):
+        for row in data:
+            print row
+
+    def determinar_categoria_ganadora(self, neurona_categorias):
+        mas_comunes = []
+
+        for i, neurona in enumerate(neurona_categorias):
+            mas_comunes.append([])
+            
+            for _, categorias in enumerate(neurona):
+                mas_comunes[i].append(self.mas_comun(categorias))
+
+        return mas_comunes
+                
+    def mas_comun(self, categorias):
+        if len(categorias) == 0:
+            return 0
+
+        return int(max(set(categorias), key=categorias.count))
+
+    def funcion_vecindad(self, neurona, ganadora, sigma):
+        return e**(-(self.distancia_geometrica(neurona, ganadora)**2 / 2*(sigma**2)))
+
+    def distancia_geometrica(self, rj, ri):
+        return float(np.linalg.norm(rj-ri))
+
+    def cooling(self, iteration_number, sigma_0, t1_sigma, eta_0, t2_eta):
+        new_sigma = sigma_0 * (e**(-(iteration_number / t1_sigma)))
+        new_eta = eta_0 * (e**(-(iteration_number / t2_eta)))
+
+        return new_sigma, new_eta
+\end{verbatim}
+\end{changemargin}
+
+\newpage
+\subsection{encoder.py}
+
+\begin{changemargin}{-2.0cm}{-1.5cm} 
+\begin{verbatim}
+# -*- coding: utf-8 -*-
+import network as ppn
+import self_organized_map as som
+import numpy as np
+import io, json
+from json import JSONEncoder
+
+def to_json(filepath, red, numero_ejercicio):
+    with io.open(filepath, 'w', encoding='utf-8') as f:
+
+        if numero_ejercicio == 1:
+            pesos = red.pesos_red
+
+            for pesos_capa in pesos:
+                pesos_capa['pesos'] = pesos_capa['pesos'].tolist()
+
+            f.write(unicode(json.dumps(pesos, ensure_ascii=False)))
+        else:
+            pesos = red.map
+
+            for i, row in enumerate(pesos):
+                for j, subrow in enumerate(row):
+                    pesos[i][j]['pesos'] = pesos[i][j]['pesos'].tolist()
+
+            f.write(unicode(json.dumps(pesos, ensure_ascii=False)))
+
+def from_json(filepath, numero_ejercicio):
+    with open(filepath, 'r') as content_file:
+        content = content_file.read()
+        pesos = json.loads(content)
+
+        if numero_ejercicio == 1:
+            for pesos_capa in pesos:
+                pesos_capa['pesos'] = np.array(pesos_capa['pesos'])
+
+            return ppn.UnsupervisedLearningNetwork(basic_init_pesos=pesos)
+
+        else:
+            for i, row in enumerate(pesos):
+                for j, subrow in enumerate(row):
+                    pesos[i][j]['pesos'] = np.array(pesos[i][j]['pesos'])
+
+            return som.SelfOrganizedMap(basic_init_pesos=pesos)
+
+\end{verbatim}
+\end{changemargin}|
