@@ -719,7 +719,20 @@ eso podemos concluir cual es su categoría con un nivel de precisión bastante b
 
 \item \textbf{¿Qué interpretación puede darle a los resultados obtenidos?} 
 
+Como se puede apreciar en los resultados de nuestros experimentos, los mapas autoorganizados permiten agrupar y mapear las categorías
+de los documentos en las neuronas de nuestro mapa, logrando que neuronas que mapean a mismas categorías sean adyacentes entre sí. Luego de
+un extenso entrenamiento dividido en las fases de ordenamiento y convergencia, la red entrenada ofrece un mapa de categoría altamente 
+preciso, ya que al validarlo con datos de validación (que no fueron utilizados para entrenar), la precisión de determinación de categoría 
+según neurona activada fue del 100\%. Esto nos permite decir que el mapa autoorganizado es un gran método de clasificación, por lo menos para
+este caso de clasificación de documentos.
+
 \item \textbf{¿Cómo se comparan estos resultados con los obtenidos anteriormente?}
+
+Se comparan directamente. En ambos ejercicios las redes resultantes nos permiten realizar una categorización de datos nuevos con un buen 
+nivel de precisión. Sin embargo, creemos que los mapas autoorganizados facilitan en gran medida la comparación y determinación de categoría 
+para nuevos datos ya que es mucho más directa debido a las 2-dimensionalidad del mapa contra la 3/9-dimensionalidad de las componentes principales, 
+para las cuales deberíamos delimitar áreas en esas dimensiones para saber si las componentes de nuevos documentos caen dentro de cuales áreas para 
+determinar su categoría.
 
 \item \textbf{¿Cuál es la arquitectura de red y parámetros de entrenamiento que utilizaría?}
 
