@@ -3,7 +3,10 @@ En esta sección incluiremos los resultados de la experimentación que realizamo
 
 La idea general de los experimentos es intentar medir la performance
 de cada red observando, en el primer problema, la distribución espacial de los clusters de empresas y en el segundo, la calidad 
-del mapa generado.\\
+del mapa generado y la capacidad de generalizar.
+
+A lo largo de los ejercicios, dividimos el dataset en dos conjuntos: entrenamiento y validación. El primero contiene al 90\% de los datos, elegidos
+azarosa y uniformemente en relacion a categoría. El resto de los documentos se agruparon para validar los resultados obtenidos en el entrenamiento.
 
 Presentamos en primer lugar los resultados obtenidos del problema de reducción de dimensiones.
 
@@ -506,15 +509,15 @@ resultados que obtuvimos en todo el ejercicio 1. En el caso de esta regla, la am
 
 Para el segundo ejercicio, los experimentos consistieron en variar la cantidad de neuronas del mapa que podían ser activadas, en conjunto con la cantidad de épocas y la división de las mismas en ordenamiento y convergencia. Intentamos variar estos factores y observar diferencias en los gráficos de estilo mapa de calor generados en base a las categorías que activaron en mayor medida a cada una de las neuronas del mapa.
 
-Comenzamos realizando clasificaciones con 200 épocas como el primer ejercicio, pero, si bien se pudieron apreciar algunos agrupamientos, no era lo esperado. Dado que además vimos que corría mucho más rápido que en el primer ejercicio, decidimos además subir las épocas a 1000 como se propone en lo visto en clase. Allí observamos una clasificación mejor, con agrupamientos bien definidos.
+Comenzamos realizando clasificaciones con 200 épocas como el primer ejercicio, pero, si bien se pudieron apreciar algunos agrupamientos, no fueron lo suficientemente claros. Dado que la performance era bastante más rápida que en el primer ejercicio, decidimos subir las épocas a 1000 como se propuso en clase. Allí observamos una clasificación mejor, con agrupamientos bien definidos.
 
-Estas pruebas fueron hechas tanto para el mapeo de los documentos directamente (donde cada neurona del mapa tiene 850 vectores de entrada), y para las 3 y 9 componentes principales que se obtienen de las redes generadas en el primer ejercicio. Para estos dos últimos casos, utilizaremos las redes generadas con el algoritmo de Sanger, dado que fue el que nos devolvió los mejores resultados.
+Estas pruebas fueron hechas tanto para el mapeo de los documentos directamente (donde cada neurona del mapa tiene 850 vectores de entrada), como para las 3 y 9 componentes principales que se obtienen de las redes generadas en el primer ejercicio. Para estos dos últimos casos, utilizaremos las redes generadas con el algoritmo de Sanger, dado que fue el que nos devolvió los mejores resultados.
 
 Finalmente, comparamos los resultados obtenidos entre las 3 opciones para dar nuestra visión de cual funcionó mejor en base a nuestros experimentos.
 
 \subsubsection{Mapeo de documentos con 850 atributos}
 
-En primera instancia, planteamos un experimento utilizando 200 épocas, lo cual no produjo buenos resultados como mencionamos anteriormente. En consecuencia, aumentamos las épocas a 1000 como sugerencia de lo visto en clase. Decidimos tomar un mapa de neuronas de 10 x 10 como primera prueba. Nos pareció un buen número para empezar para darle oportunidad a cada neurona de que sea activada por más de un documento (810 documentos de entrenamiento sobre 100 neuronas del mapa). 
+En primera instancia, planteamos un experimento utilizando 200 épocas. Como mencionamos anteriormente, esta cantidad de épocas no produjo buenos resultados. En consecuencia, aumentamos la cantidad a 1000 como se mencionó en clase. Decidimos tomar un mapa de neuronas de 10 x 10 como primera prueba. Nos pareció un buen número para empezar para darle oportunidad a cada neurona de que sea activada por más de un documento (810 documentos de entrenamiento sobre 100 neuronas del mapa). 
 
 \begin{figure}[h]
   \begin{center}
@@ -523,7 +526,8 @@ En primera instancia, planteamos un experimento utilizando 200 épocas, lo cual 
   \end{center}
 \end{figure}
 
-Si bien hay un idea de agrupamiento no es lo que esperábamos, por lo cual decidimos variar el parámetro T1 del cálculo del sigma inicial para que la función logaritmo del sigma que nosotros pasamos por parámetro le aplique logaritmo en base 2 en vez de logaritmo natural. Luego, volvimos a correr el experimento y obtuvimos mejores resultados.
+Si bien hay un idea de agrupamiento, éste no es tan claro como esperábamos, por lo cual decidimos variar el parámetro T1 del cálculo del sigma inicial para que la función logaritmo del sigma que nosotros pasamos por parámetro le aplique logaritmo en base 2 en vez de logaritmo natural. Luego, volvimos a correr el experimento y obtuvimos mejores resultados. Observemos:
+\newpage
 
 \begin{figure}[h]
   \begin{center}
@@ -532,9 +536,9 @@ Si bien hay un idea de agrupamiento no es lo que esperábamos, por lo cual decid
   \end{center}
 \end{figure}
 
-Sin embargo, encontramos muy extraño que haya tantos blancos en el mapa, que significa que esas neuronas que están blancas no fueron activadas por ningún documento cuando realizamos la última pasada de los documentos sobre la red entrenada para armar el mapa. Esto nos desconcertó de si era correcto o no, con lo cual recurrimos a consultarlo con los profesores, lo que nos permitió entender que esto no debería suceder y que las posibles causas podían ser que nuestro mapa era demasiado grande, o que teníamos algún problema en la función de vecindad y/o las fases de ordenamiento y convergencia y/o nuestro código en sí.
+Encontramos muy extraño que haya tantos blancos en el mapa. Cada uno indica que esas neuronas no fueron activadas por ningún documentoal realizar la última recorrida de los documentos sobre la red entrenada para armar el mapa. Esto nos desconcertó, por lo que recurrimos a consultarlo con los profesores. Entendimos que esto no debería suceder y que las posibles causas podían ser que nuestro mapa era demasiado grande, o que teníamos algún problema en la función de vecindad y/o las fases de ordenamiento y convergencia y/o nuestro código en sí.
 
-Luego de revisar nuestra implementación, descubrimos que las fases de ordenamiento y convergencia no estaban muy bien definidas y que durante todas las épocas tanto el sigma como el eta no dejaban de ser \textit{enfriados}. Es por eso que decidimos plantear que de las 1000 épocas, dos tercios de las mismas sean de ordenamiento y el resto de convergencia. Además, decidimos achicar el área de nuestro mapa de neuronas de 10x10 a 8x8 y volvimos a correr el experimento con sigma 5 y con sigma 8.
+Luego de revisar nuestra implementación, descubrimos que las fases de ordenamiento y convergencia no estaban muy bien definidas y que durante todas las épocas tanto el sigma como el eta no dejaban de ser \textit{enfriados}. Es por eso que decidimos plantear que de las 1000 épocas, dos tercios de las mismas fueran de ordenamiento y el resto de convergencia. Además, decidimos achicar el área de nuestro mapa de neuronas de 10x10 a 8x8 y volvimos a correr el experimento con sigma 5 y con sigma 8.
 
 \begin{figure}[!htbp]
 \centering
@@ -552,7 +556,9 @@ Luego de revisar nuestra implementación, descubrimos que las fases de ordenamie
 \end{subfigure}
 \end{figure}
 
-Con los resultados podemos ver que la presencia de blancos disminuyo ligeramente pero siguen presentes, incluso aún no tenemos una clusterización perfecta que es lo que queremos lograr. Debido a que no estamos conformes con éstos resultados, decidimos ahora modificar la duración de las fases de ordenamiento y convergencia. Recordemos que hasta éste momento estábamos utilizando 2 tercios de la 1000 épocas para el ordenamiento y el tercio restante para convergencia (~333 épocas para convergencia). Ahora, en vez de eso, haremos pruebas con 1 medio (500 épocas) y 1 cuarto (250 épocas) para convergencia.
+Con los resultados podemos ver que la presencia de blancos disminuyó ligeramente pero siguen presentes. También podemos notar que no se obtiene una clusterización perfecta que es lo que quisimos lograr. Debido a que no estar conformes con éstos resultados, decidimos modificar la duración de las fases de ordenamiento y convergencia. Recordemos que hasta este momento estábamos utilizando dos tercios de la 1000 épocas para el ordenamiento y el tercio restante para convergencia (~333 épocas para convergencia). Ahora, en vez de eso, haremos pruebas con 1 medio (500 épocas) y 1 cuarto (250 épocas) para convergencia.
+
+\newpage
 
 \begin{figure}[!htbp]
 \centering
@@ -570,7 +576,7 @@ Con los resultados podemos ver que la presencia de blancos disminuyo ligeramente
 \end{subfigure}
 \end{figure}
 
-Como se puede apreciar, el problema de clusterización se resuelve en su totalidad utilizando 750 épocas para el ordenamiento y 250 para la convergencia. Por otro lado, el problema de los blancos sigue presente, lo cual nos lleva nuevamente a replantear nuestros parámetros para eliminar este comportamiento en su totalidad. Es por eso que decidimos utilizar un mapa de neuronas más pequeño, de 7x7 en vez de 8x8. 
+Como se puede apreciar, el problema de clusterización se resuelve mucho mejor utilizando 750 épocas para el ordenamiento y 250 para la convergencia. Por otro lado, el problema de los blancos sigue presente, lo cual nos lleva nuevamente a replantear nuestros parámetros para eliminar este comportamiento en su totalidad. Es por eso que decidimos utilizar un mapa de neuronas más pequeño, de 7x7 en vez de 8x8. 
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -580,6 +586,8 @@ Como se puede apreciar, el problema de clusterización se resuelve en su totalid
 \end{figure}
 
 Ahora sí, en este experimento conseguimos los resultados esperados, con lo cual confirmamos que nuestro problema era que el mapa de neuronas estaba demasiado grande. Un detalle importante es que luego de realizar este experimento nos dimos cuenta que las categorías 8 y 9 estaban siendo coloreadas de la misma manera, con lo cual tuvimos que ajustar el mapa para que salga correctamente.
+
+\newpage
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -595,23 +603,86 @@ Finalmente, para el mapa de 7x7, calculamos el error de predicción de categorí
 \begin{figure}[!htbp]
   \begin{center}
     \includegraphics[scale=0.6]{../img/map7x7_1000ep_850en_sigma7_faseord750_corregido_errores.png}
-  \caption{Error de categoría predecida entre datos de validación con las categorías que activan las neuronas}
+  \caption{Cantidad de errores por categoría. $X=$: categorías, $Y=$ cantidad de errores.}
   \end{center}
 \end{figure}
 
 Como se puede apreciar, la categorización es excelente, todos los documentos de nuestro conjunto de validación mapean a neuronas que se corresponden con su categoría, que era nuestro objetivo para esta tipo de red.
 
-Tiempo de corrida: ~750 segundos
+Tiempo de ejecución: ~750 segundos.
 
 \subsubsection{Mapeo de documentos con 3 componentes principales}
 
-Para este experimento, en vez de utilizar los 850 atributos de cada documento para hacer el mapeo con nuestro mapa de neuronas, aprovecharemos las redes generadas en el ejercicio 1 para obtener las componentes principales de cada uno de los documentos. Luego, utilizaremos estas componentes como entrada de las neuronas de nuestro mapa, y de esta manera comparar con lo obtenido en la sección anterior. 
+En este experimento, en lugar de utilizar los 850 atributos de cada documento para hacer el mapeo con nuestro mapa de neuronas, aprovechamos las redes generadas en el ejercicio 1 para obtener las componentes principales de cada uno de los documentos. Luego, utilizamos estas componentes como entrada de las neuronas de nuestro mapa, y de esta manera comparamos los resultados con los obtenidos en la sección anterior. Replicamos el experimento utilizando reducciones de 3 y 9 dimensiones.
 
-La red entrenada del ejercicio 1 que utilizaremos para obtener las componentes será una red entrenada con el algoritmo de Sanger de 200 épocas de entrenamiento, que fue la que arrojó los mejores resultados en ese ejercicio.
+Para poder generar la entrada, utilizamos dos redes entrenadas, las cuales incluimos en el TP: \textbf{sanger200\_dim3.json} y \textbf{sanger200\_dim9.json}. Corresponden a redes entrenadas con regla de Sanger y que calculan reducción a 3 y 9 componentes principales. En ellas se utilizaron 200 épocas de training ya que fue la cantidad óptima concluída de los experimentos.
 
-Para esta sección vamos a probar algunas de las configuraciones que utilizamos en la sección anterior para analizar que tanto varían los resultados.
+Fijamos el resto de los parámetros de la prueba con los valores óptimos de la sección anterior: 1000 épocas de entrenamiento, Sigma 7, mapa de 7x7.\\
 
-Tiempo de corrida 3comp: ~680 segundos
+Observemos primero los resultados, utilizando 3 componentes princiales como entrada:
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[scale=0.6]{../img/map7x7_1000ep_3en_sigma7_faseord750.png}
+  \caption{Mapa 7x7 - 3 componentes de entrada - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
+  \end{center}
+\end{figure}
+
+El mapa obtenido es bastante aceptable. Se pueden apreciar los distintos clusters con claridad. Hay un par de categorías que se encuetran dispersas como la 5, la 6 y la 8.
+Podemos ver que la calidad del mapa no es tan buena como la obtenida utilizando la totalidad de los atributos.
+
+Este mapa aquí exhibido se generó con los datos de entrenamiento, utilizando el 90\% del dataset. Para poder medir la capacidad de generalizar de la red: se usaron los documentos restantes  como datos de validación y sobre éstos calculamos cuantos errores de clasificación se obtuvieron. 
+
+Veamos la cantidad de errores por categoría:
+
+\newpage
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[scale=0.5]{../img/validation_1000ep_3en_sigma7_faseord750.png}
+  \caption{Cantidad de errores por categoría. $X=$: categorías, $Y=$ cantidad de errores.}
+  \end{center}
+\end{figure}
+
+Vemos que a la hora de predecir categorías, esta red presenta muchos más errores que su contraparte de 850 atributos. En aquella no se habían generado errores mientras que aquí, en total, hay más del 30\% de desaciertos, considerando que se clasificaron 90 documentos y hay 34 errores. 
+
+Este resultado es llamativo, ya que esperábamos mayor eficiencia en la generalizacion de documentos nuevos. Creemos que esto se debió a la menor información que presenta la reducción de dimensiones como entrada.\\
+
+El tiempo de ejecución total con 3 componentes fue de: ~680 segundos.
+
+Veamos si se mantuvo la tendencia utilizando 9 dimensiones.
+
+\subsubsection{Mapeo de documentos con 9 componentes principales}
+
+Este experimento replica al anterior, pero con la entrada del experimento teniendo 9 componentes principales. Todos los demás parámetros fijados en los mismos valores.
+
+Veamos la calidad del mapa obtenido:
+\newpage
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[scale=0.6]{../img/map7x7_1000ep_9en_sigma7_faseord750.png}
+  \caption{Mapa 7x7 - 9 componentes de entrada - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
+  \end{center}
+\end{figure}
+
+Observamos que este mapa también tiene buena claridad y separación entre los clusters. Al igual que con 3 componentes, algunas de las categorías se encuentran dispersas, como la 1 y la 8.
+Presenta una calidad aceptable, pero no tan buena como la del mapa de 850 atributos.
+
+A continuación los errores de predicción sobre el conjunto de validación:
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[scale=0.5]{../img/validation_1000ep_9en_sigma7_faseord750.png}
+  \caption{Cantidad de errores por categoría. $X=$: categorías, $Y=$ cantidad de errores.}
+  \end{center}
+\end{figure}
+
+La figura muestra que se mantuvo una tasa alta de errores. Con 32 errores sobre 90 documentos, la capacidad de predicción no es muy buena, manteniendo aproximadamente la misma efectividad que la red del experimento anterior.
+
+Estos resultados nos indican que tomar como entrada menor cantidad de componentes tuvo un impacto negativo sobre la calidad del mapa y especialmente sobre la efectividad de la red para generalizar los datos de validación. Inicialmente creíamos que se iba a mantener una performance relativamente igual de buena pero los resultados nos contradijeron.
+
+El tiempo de ejecución total con 9 componentes fue de: ~721 segundos. Observando los tiempos obtenidos en los experimentos anteriores, no se nota un descenso notable de la performance utilizando menos componentes.
 
 \newpage
 \section{Soluciones Óptimas Propuestas}
