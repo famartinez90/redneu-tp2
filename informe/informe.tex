@@ -63,6 +63,9 @@
 \newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
 \newtheorem{teorema}{Teorema}[section]
 
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
 \input{caratula.tex} 
 \begin{document}
 { \oddsidemargin = 2em
@@ -74,6 +77,8 @@
 	\input{introduccion.tex}
 	\newpage
 	\input{resultados.tex}
+	\newpage
+	\input{codigo.tex}
 	\newpage
 \end{document}
 

@@ -128,10 +128,8 @@ plt.show()
 ######### CALCULO DEL ERROR CON VALIDACION ###########
 
 if red_ej1 is not None:
-    # resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
     errores_x_categoria = SOM.validation_error(coordenadas_validation, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 else:
-    # resultados_validation = SOM.predict(dataset_validation, categorias_verificacion, int(len(matrix) * 0.9))
     errores_x_categoria = SOM.validation_error(dataset_validation, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 
 fig = plt.figure()

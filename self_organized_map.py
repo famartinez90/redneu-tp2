@@ -155,5 +155,3 @@ class SelfOrganizedMap(object):
         new_eta = eta_0 * (e**(-(iteration_number / t2_eta)))
 
         return new_sigma, new_eta
-        
-

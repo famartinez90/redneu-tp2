@@ -615,7 +615,7 @@ Tiempo de ejecución: ~750 segundos.
 
 En este experimento, en lugar de utilizar los 850 atributos de cada documento para hacer el mapeo con nuestro mapa de neuronas, aprovechamos las redes generadas en el ejercicio 1 para obtener las componentes principales de cada uno de los documentos. Luego, utilizamos estas componentes como entrada de las neuronas de nuestro mapa, y de esta manera comparamos los resultados con los obtenidos en la sección anterior. Replicamos el experimento utilizando reducciones de 3 y 9 dimensiones.
 
-Para poder generar la entrada, utilizamos dos redes entrenadas, las cuales incluimos en el TP: \textbf{sanger200\_dim3.json} y \textbf{sanger200\_dim9.json}. Corresponden a redes entrenadas con regla de Sanger y que calculan reducción a 3 y 9 componentes principales. En ellas se utilizaron 200 épocas de training ya que fue la cantidad óptima concluída de los experimentos.
+Para poder generar la entrada, utilizamos dos redes entrenadas, las cuales incluimos en el TP:\\ \textbf{sanger200\_dim3.json} y \textbf{sanger200\_dim9.json}. Corresponden a redes entrenadas con regla de Sanger y que calculan reducción a 3 y 9 componentes principales. En ellas se utilizaron 200 épocas de training ya que fue la cantidad óptima concluída de los experimentos.
 
 Fijamos el resto de los parámetros de la prueba con los valores óptimos de la sección anterior: 1000 épocas de entrenamiento, Sigma 7, mapa de 7x7.\\
 
@@ -639,14 +639,14 @@ Veamos la cantidad de errores por categoría:
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[scale=0.5]{../img/validation_1000ep_3en_sigma7_faseord750.png}
+    \includegraphics[scale=0.45]{../img/validation_1000ep_3en_sigma7_faseord750.png}
   \caption{Cantidad de errores por categoría. $X=$: categorías, $Y=$ cantidad de errores.}
   \end{center}
 \end{figure}
 
 Vemos que a la hora de predecir categorías, esta red presenta muchos más errores que su contraparte de 850 atributos. En aquella no se habían generado errores mientras que aquí, en total, hay más del 30\% de desaciertos, considerando que se clasificaron 90 documentos y hay 34 errores. 
 
-Este resultado es llamativo, ya que esperábamos mayor eficiencia en la generalizacion de documentos nuevos. Creemos que esto se debió a la menor información que presenta la reducción de dimensiones como entrada.\\
+Este resultado es llamativo, ya que esperábamos mayor eficiencia en la generalizacion de documentos nuevos. Creemos que esto se debió a la menor información que presenta la reducción de dimensiones como entrada.
 
 El tiempo de ejecución total con 3 componentes fue de: ~680 segundos.
 
@@ -657,11 +657,10 @@ Veamos si se mantuvo la tendencia utilizando 9 dimensiones.
 Este experimento replica al anterior, pero con la entrada del experimento teniendo 9 componentes principales. Todos los demás parámetros fijados en los mismos valores.
 
 Veamos la calidad del mapa obtenido:
-\newpage
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[scale=0.6]{../img/map7x7_1000ep_9en_sigma7_faseord750.png}
+    \includegraphics[scale=0.48]{../img/map7x7_1000ep_9en_sigma7_faseord750.png}
   \caption{Mapa 7x7 - 9 componentes de entrada - 1000 épocas (750 ord/250 conv) - Sigma 7 - Entrenamiento}
   \end{center}
 \end{figure}
@@ -673,7 +672,7 @@ A continuación los errores de predicción sobre el conjunto de validación:
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[scale=0.5]{../img/validation_1000ep_9en_sigma7_faseord750.png}
+    \includegraphics[scale=0.45]{../img/validation_1000ep_9en_sigma7_faseord750.png}
   \caption{Cantidad de errores por categoría. $X=$: categorías, $Y=$ cantidad de errores.}
   \end{center}
 \end{figure}
@@ -759,7 +758,6 @@ resulta en una categorización en la que no se puede confiar.
 
 \end{itemize}
 
-\newpage
 \section{Conclusión}
 
 En toda nuestra experimentación, la selección de datos de entrenamiento y validación es totalmente aleatoria, con lo cual podrían haber
