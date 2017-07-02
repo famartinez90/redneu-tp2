@@ -3,6 +3,7 @@ import csv
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import network as ppn
 import parameters as params
 import encoder as encoder
@@ -10,7 +11,7 @@ import encoder as encoder
 
 ######### PARSEO DE PARAMETROS ##############
 
-filepath, eta, epochs, regla, dim_salida, red_desde_archivo, red_hacia_archivo, red_ej1 = params.iniciar()
+filepath, eta, epochs, regla, dimensiones, red_desde_archivo, red_hacia_archivo, red_ej1 = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 
@@ -49,7 +50,7 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 ######## TRAINING ##############
 
 n_entrada = len(atributos[0])
-n_salida = dim_salida
+n_salida = dimensiones
 
 if red_desde_archivo:
     PPN = encoder.from_json(red_desde_archivo, 1)

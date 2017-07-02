@@ -118,7 +118,7 @@ class SelfOrganizedMap(object):
 
             categoria_training = resultados_training[winner_index[0]][winner_index[1]]
 
-            if categoria_training != categorias[k+offset]:
+            if categoria_training != categorias[k+int(offset)]:
                 print 'error en '+str(categoria_training)
                 error_x_categoria[categoria_training] = (categoria_training, error_x_categoria[categoria_training][1]+1)
 

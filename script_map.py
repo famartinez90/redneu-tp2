@@ -12,7 +12,7 @@ import encoder as encoder
 
 ######### PARSEO DE PARAMETROS ##############
 
-filepath, eta, epochs, regla, dim_salida, red_desde_archivo, red_hacia_archivo, red_ej1 = params.iniciar()
+filepath, eta, epochs, regla, dimensiones, red_desde_archivo, red_hacia_archivo, red_ej1 = params.iniciar()
 
 ######### PARSEO DE DATOS ##############
 
@@ -50,7 +50,12 @@ dataset_validation = matrix[int(len(matrix) * 0.9):]
 
 ######## TRAINING ##############
 
-n_entrada = len(atributos[0])
+# Si se va a ejecutar reduciendo dimensiones con redes del ej1, tomar nentrada del tam apropiado
+if red_ej1 is not None:
+    n_entrada = dimensiones
+else:
+    n_entrada = len(atributos[0])
+
 map_size = 7
 sigma = 7
 longer_width = 0
@@ -64,12 +69,19 @@ else:
 # Reducir dimensionalidad utilizando dicha red
 if red_ej1 is not None:
     coordenadas = SOM.translate_documentos_to_coordenadas(dataset_train, red_ej1)
-    SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        SOM.train_con_documentos(coordenadas, sigma=sigma, epochs=epochs)
+
     resultados = SOM.predict(coordenadas, categorias_verificacion)
 
 # Si no hay red ej1, usar dataset default
 else:
-    SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+    # Si la red es nueva, entrenarla
+    if red_desde_archivo is None:
+        SOM.train_con_documentos(dataset_train, sigma=sigma, epochs=epochs)
+
     resultados = SOM.predict(dataset_train, categorias_verificacion)
 
 
@@ -108,7 +120,7 @@ m = plt.colorbar(heatmap, ticks=range(11))
 
 ######### CALCULO DEL ERROR CON VALIDACION ###########
 
-if filepath == "sanger_network.data":
+if red_ej1 is not None:
     # resultados_validation = SOM.predict(coordenadas, categorias_verificacion, len(matrix) * 0.9)
     errores_x_categoria = SOM.validation_error(coordenadas, resultados, categorias_verificacion, int(len(matrix) * 0.9))
 else:
