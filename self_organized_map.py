@@ -95,7 +95,7 @@ class SelfOrganizedMap(object):
                         min_distancia = distancia
                         winner_index = np.array([i, j])
 
-            resultados[winner_index[0]][winner_index[1]].append(categorias[k+offset])
+            resultados[winner_index[0]][winner_index[1]].append(categorias[k+int(offset)])
 
         return self.determinar_categoria_ganadora(resultados)
 
