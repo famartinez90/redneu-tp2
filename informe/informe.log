@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.13)  1 JUL 2017 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.13)  2 JUL 2017 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1385,7 +1385,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<logo_dc.jpg, id=72, 215.6055pt x 83.5923pt>
+<logo_dc.jpg, id=84, 215.6055pt x 83.5923pt>
 File: logo_dc.jpg Graphic file (type jpg)
  <use logo_dc.jpg>
 Package pdftex.def Info: logo_dc.jpg used on input line 70.
@@ -1404,7 +1404,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logo_uba.jpg, id=73, 225.4824pt x 231.7458pt>
+<logo_uba.jpg, id=85, 225.4824pt x 231.7458pt>
 File: logo_uba.jpg Graphic file (type jpg)
  <use logo_uba.jpg>
 Package pdftex.def Info: logo_uba.jpg used on input line 70.
@@ -1690,14 +1690,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 20.
 
-<../img/ej1/oja/oja_3salida_100ep_train_2.png, id=120, 669.9429pt x 413.3844pt>
+<../img/ej1/oja/oja_3salida_100ep_train_2.png, id=135, 669.9429pt x 413.3844pt>
 File: ../img/ej1/oja/oja_3salida_100ep_train_2.png Graphic file (type png)
 <use ../img/ej1/oja/oja_3salida_100ep_train_2.png>
 Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_train_2.png used on i
 nput line 27.
 (pdftex.def)             Requested size: 669.94125pt x 413.38338pt.
 
-<../img/ej1/oja/oja_3salida_100ep_train_3.png, id=122, 698.1282pt x 391.7034pt>
+<../img/ej1/oja/oja_3salida_100ep_train_3.png, id=137, 698.1282pt x 391.7034pt>
 File: ../img/ej1/oja/oja_3salida_100ep_train_3.png Graphic file (type png)
 <use ../img/ej1/oja/oja_3salida_100ep_train_3.png>
 Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_train_3.png used on i
@@ -1731,7 +1731,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 39.
  [5 <../img/ej1/oja/oja_3salida_100ep_train_2.png> <../img/ej1/oja/oja_3salida_
 100ep_train_3.png>]
-<../img/ej1/oja/oja_3salida_100ep_train.png, id=132, 895.4253pt x 500.8311pt>
+<../img/ej1/oja/oja_3salida_100ep_train.png, id=147, 895.4253pt x 500.8311pt>
 File: ../img/ej1/oja/oja_3salida_100ep_train.png Graphic file (type png)
 
 <use ../img/ej1/oja/oja_3salida_100ep_train.png>
@@ -1744,7 +1744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--50
  []
 
 
-<../img/ej1/oja/oja_3salida_100ep_validation.png, id=133, 557.9244pt x 325.215p
+<../img/ej1/oja/oja_3salida_100ep_validation.png, id=148, 557.9244pt x 325.215p
 t>
 File: ../img/ej1/oja/oja_3salida_100ep_validation.png Graphic file (type png)
  <use ../img/ej1/oja/oja_3salida_100ep_validation.png>
@@ -1752,7 +1752,7 @@ Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_validation.png used o
 n input line 57.
 (pdftex.def)             Requested size: 557.92302pt x 325.2142pt.
 
-<../img/ej1/oja/oja_3salida_100ep_validation_3.png, id=134, 430.7292pt x 281.85
+<../img/ej1/oja/oja_3salida_100ep_validation_3.png, id=149, 430.7292pt x 281.85
 3pt>
 File: ../img/ej1/oja/oja_3salida_100ep_validation_3.png Graphic file (type png)
 
@@ -1761,7 +1761,7 @@ Package pdftex.def Info: ../img/ej1/oja/oja_3salida_100ep_validation_3.png used
  on input line 63.
 (pdftex.def)             Requested size: 430.72815pt x 281.85231pt.
 
-<../img/ej1/oja/oja_3salida_100ep_validation_2.png, id=135, 426.393pt x 287.634
+<../img/ej1/oja/oja_3salida_100ep_validation_2.png, id=150, 426.393pt x 287.634
 6pt>
 File: ../img/ej1/oja/oja_3salida_100ep_validation_2.png Graphic file (type png)
 
@@ -1806,21 +1806,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
  []
 
 
-<../img/ej1/oja/oja_3salida_200ep_train.png, id=145, 913.16156pt x 461.47406pt>
+<../img/ej1/oja/oja_3salida_200ep_train.png, id=160, 913.16156pt x 461.47406pt>
 File: ../img/ej1/oja/oja_3salida_200ep_train.png Graphic file (type png)
 <use ../img/ej1/oja/oja_3salida_200ep_train.png>
 Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train.png used on inp
 ut line 87.
 (pdftex.def)             Requested size: 913.15933pt x 461.47292pt.
 
-<../img/ej1/oja/oja_3salida_200ep_train_2.png, id=146, 638.8668pt x 374.3586pt>
+<../img/ej1/oja/oja_3salida_200ep_train_2.png, id=161, 638.8668pt x 374.3586pt>
 File: ../img/ej1/oja/oja_3salida_200ep_train_2.png Graphic file (type png)
 <use ../img/ej1/oja/oja_3salida_200ep_train_2.png>
 Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_2.png used on i
 nput line 93.
 (pdftex.def)             Requested size: 638.86523pt x 374.35768pt.
 
-<../img/ej1/oja/oja_3salida_200ep_train_3.png, id=147, 675.0018pt x 339.669pt>
+<../img/ej1/oja/oja_3salida_200ep_train_3.png, id=162, 675.0018pt x 339.669pt>
 File: ../img/ej1/oja/oja_3salida_200ep_train_3.png Graphic file (type png)
 
 <use ../img/ej1/oja/oja_3salida_200ep_train_3.png>
@@ -1828,7 +1828,7 @@ Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_3.png used on i
 nput line 102.
 (pdftex.def)             Requested size: 675.00015pt x 339.66817pt.
 
-<../img/ej1/oja/oja_3salida_200ep_train_4.png, id=148, 857.1222pt x 495.7722pt>
+<../img/ej1/oja/oja_3salida_200ep_train_4.png, id=163, 857.1222pt x 495.7722pt>
 File: ../img/ej1/oja/oja_3salida_200ep_train_4.png Graphic file (type png)
 <use ../img/ej1/oja/oja_3salida_200ep_train_4.png>
 Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_train_4.png used on i
@@ -1864,7 +1864,7 @@ Package babel Info: Redefining spanish shorthand "?
 lida_200ep_train.png> <../img/ej1/oja/oja_3salida_200ep_train_2.png> <../img/ej
 1/oja/oja_3salida_200ep_train_3.png> <../img/ej1/oja/oja_3salida_200ep_train_4.
 png>]
-<../img/ej1/oja/oja_3salida_200ep_validation.png, id=162, 619.3539pt x 355.5684
+<../img/ej1/oja/oja_3salida_200ep_validation.png, id=178, 619.3539pt x 355.5684
 pt>
 File: ../img/ej1/oja/oja_3salida_200ep_validation.png Graphic file (type png)
  <use ../img/ej1/oja/oja_3salida_200ep_validation.png>
@@ -1872,7 +1872,7 @@ Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_validation.png used o
 n input line 125.
 (pdftex.def)             Requested size: 619.35239pt x 355.56752pt.
 
-<../img/ej1/oja/oja_3salida_200ep_validation_3.png, id=163, 460.3599pt x 283.29
+<../img/ej1/oja/oja_3salida_200ep_validation_3.png, id=179, 460.3599pt x 283.29
 84pt>
 File: ../img/ej1/oja/oja_3salida_200ep_validation_3.png Graphic file (type png)
 
@@ -1881,7 +1881,7 @@ Package pdftex.def Info: ../img/ej1/oja/oja_3salida_200ep_validation_3.png used
  on input line 131.
 (pdftex.def)             Requested size: 460.35876pt x 283.2977pt.
 
-<../img/ej1/oja/oja_3salida_200ep_validation_2.png, id=164, 476.2593pt x 278.23
+<../img/ej1/oja/oja_3salida_200ep_validation_2.png, id=180, 476.2593pt x 278.23
 95pt>
 File: ../img/ej1/oja/oja_3salida_200ep_validation_2.png Graphic file (type png)
 
@@ -1930,7 +1930,7 @@ Package babel Info: Redefining spanish shorthand "?
  [8 <../img/ej1/oja/oja_3salida_200ep_validation.png> <../img/ej1/oja/oja_3sali
 da_200ep_validation_3.png> <../img/ej1/oja/oja_3salida_200ep_validation_2.png>]
 
-<../img/ej1/sanger/sanger_3salida_100ep_train.png, id=174, 884.5848pt x 498.663
+<../img/ej1/sanger/sanger_3salida_100ep_train.png, id=190, 884.5848pt x 498.663
 pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_train.png Graphic file (type png)
  <use ../img/ej1/sanger/sanger_3salida_100ep_train.png>
@@ -1938,7 +1938,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train.png used
 on input line 158.
 (pdftex.def)             Requested size: 884.58263pt x 498.66177pt.
 
-<../img/ej1/sanger/sanger_3salida_100ep_train_3.png, id=175, 691.6239pt x 396.0
+<../img/ej1/sanger/sanger_3salida_100ep_train_3.png, id=191, 691.6239pt x 396.0
 396pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_train_3.png Graphic file (type png
 )
@@ -1947,7 +1947,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train_3.png use
 d on input line 164.
 (pdftex.def)             Requested size: 691.62222pt x 396.03862pt.
 
-<../img/ej1/sanger/sanger_3salida_100ep_train_2.png, id=176, 665.6067pt x 424.2
+<../img/ej1/sanger/sanger_3salida_100ep_train_2.png, id=192, 665.6067pt x 424.2
 249pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_train_2.png Graphic file (type png
 )
@@ -1956,7 +1956,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_train_2.png use
 d on input line 172.
 (pdftex.def)             Requested size: 299.52025pt x 190.89943pt.
 
-<../img/ej1/sanger/sanger_3salida_100ep_validation.png, id=177, 556.479pt x 338
+<../img/ej1/sanger/sanger_3salida_100ep_validation.png, id=193, 556.479pt x 338
 .2236pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_validation.png Graphic file (type 
 png)
@@ -1965,7 +1965,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_validation.png
 used on input line 187.
 (pdftex.def)             Requested size: 556.47765pt x 338.22278pt.
 
-<../img/ej1/sanger/sanger_3salida_100ep_validation_3.png, id=178, 426.393pt x 2
+<../img/ej1/sanger/sanger_3salida_100ep_validation_3.png, id=194, 426.393pt x 2
 81.853pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_validation_3.png Graphic file (typ
 e png)
@@ -1974,7 +1974,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_100ep_validation_3.pn
 g used on input line 193.
 (pdftex.def)             Requested size: 426.39195pt x 281.85231pt.
 
-<../img/ej1/sanger/sanger_3salida_100ep_validation_2.png, id=179, 426.393pt x 3
+<../img/ej1/sanger/sanger_3salida_100ep_validation_2.png, id=195, 426.393pt x 3
 12.2064pt>
 File: ../img/ej1/sanger/sanger_3salida_100ep_validation_2.png Graphic file (typ
 e png)
@@ -2016,7 +2016,7 @@ Package babel Info: Redefining spanish shorthand "?
 _3salida_100ep_train_3.png> <../img/ej1/sanger/sanger_3salida_100ep_train_2.png
 > <../img/ej1/sanger/sanger_3salida_100ep_validation.png> <../img/ej1/sanger/sa
 nger_3salida_100ep_validation_3.png>]
-<../img/ej1/sanger/sanger_3salida_200ep_train_2.png, id=193, 456.7464pt x 355.5
+<../img/ej1/sanger/sanger_3salida_200ep_train_2.png, id=208, 456.7464pt x 355.5
 684pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_train_2.png Graphic file (type png
 )
@@ -2052,7 +2052,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 219.
  [10 <../img/ej1/sanger/sanger_3salida_100ep_validation_2.png> <../img/ej1/sang
 er/sanger_3salida_200ep_train_2.png>]
-<../img/ej1/sanger/sanger_3salida_200ep_train.png, id=202, 615.7404pt x 378.694
+<../img/ej1/sanger/sanger_3salida_200ep_train.png, id=217, 615.7404pt x 378.694
 8pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_train.png Graphic file (type png)
  <use ../img/ej1/sanger/sanger_3salida_200ep_train.png>
@@ -2060,7 +2060,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_train.png used
 on input line 225.
 (pdftex.def)             Requested size: 615.73889pt x 378.69386pt.
 
-<../img/ej1/sanger/sanger_3salida_200ep_train_3.png, id=203, 461.0826pt x 293.4
+<../img/ej1/sanger/sanger_3salida_200ep_train_3.png, id=218, 461.0826pt x 293.4
 162pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_train_3.png Graphic file (type png
 )
@@ -2069,7 +2069,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_train_3.png use
 d on input line 231.
 (pdftex.def)             Requested size: 461.08147pt x 293.41548pt.
 
-<../img/ej1/sanger/sanger_3salida_200ep_validation.png, id=204, 573.8238pt x 36
+<../img/ej1/sanger/sanger_3salida_200ep_validation.png, id=219, 573.8238pt x 36
 6.4089pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_validation.png Graphic file (type 
 png)
@@ -2078,7 +2078,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_validation.png
 used on input line 248.
 (pdftex.def)             Requested size: 573.8224pt x 366.408pt.
 
-<../img/ej1/sanger/sanger_3salida_200ep_validation_3.png, id=205, 427.8384pt x 
+<../img/ej1/sanger/sanger_3salida_200ep_validation_3.png, id=220, 427.8384pt x 
 271.7352pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_validation_3.png Graphic file (typ
 e png)
@@ -2087,7 +2087,7 @@ Package pdftex.def Info: ../img/ej1/sanger/sanger_3salida_200ep_validation_3.pn
 g used on input line 254.
 (pdftex.def)             Requested size: 427.83734pt x 271.73451pt.
 
-<../img/ej1/sanger/sanger_3salida_200ep_validation_2.png, id=206, 420.6114pt x 
+<../img/ej1/sanger/sanger_3salida_200ep_validation_2.png, id=221, 420.6114pt x 
 310.761pt>
 File: ../img/ej1/sanger/sanger_3salida_200ep_validation_2.png Graphic file (typ
 e png)
@@ -2139,7 +2139,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 271.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123.png, id=219, 899
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123.png, id=234, 899
 .7615pt x 498.663pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123.png Graphic
  file (type png)
@@ -2149,7 +2149,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim123.png used on input line 284.
 (pdftex.def)             Requested size: 899.75931pt x 498.66177pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_2.png, id=220, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_2.png, id=235, 6
 67.7748pt x 468.3096pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_2.png Graph
 ic file (type png)
@@ -2159,7 +2159,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim123_2.png used on input line 290.
 (pdftex.def)             Requested size: 667.77316pt x 468.30846pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_3.png, id=221, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_3.png, id=236, 6
 74.2791pt x 378.6948pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_3.png Graph
 ic file (type png)
@@ -2169,7 +2169,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim123_3.png used on input line 300.
 (pdftex.def)             Requested size: 674.27745pt x 378.69386pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_4.png, id=222, 9
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_4.png, id=237, 9
 01.9296pt x 560.0925pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_4.png Graph
 ic file (type png)
@@ -2209,7 +2209,7 @@ Package babel Info: Redefining spanish shorthand "?
 /ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim123_2.png> <../img/ej1/oja_
 corrida_200_9/oja_9salida_200ep_testing_dim123_3.png> <../img/ej1/oja_corrida_2
 00_9/oja_9salida_200ep_testing_dim123_4.png>]
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456.png, id=233, 908
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456.png, id=248, 908
 .4339pt x 534.0753pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456.png Graphic
  file (type png)
@@ -2219,7 +2219,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim456.png used on input line 323.
 (pdftex.def)             Requested size: 908.43169pt x 534.07399pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_2.png, id=234, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_2.png, id=249, 6
 76.4472pt x 485.6544pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_2.png Graph
 ic file (type png)
@@ -2229,7 +2229,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim456_2.png used on input line 329.
 (pdftex.def)             Requested size: 676.44556pt x 485.65321pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_3.png, id=235, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_3.png, id=250, 6
 67.7748pt x 371.4678pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_3.png Graph
 ic file (type png)
@@ -2239,7 +2239,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim456_3.png used on input line 339.
 (pdftex.def)             Requested size: 667.77316pt x 371.46689pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_4.png, id=236, 8
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_4.png, id=251, 8
 95.4253pt x 505.89pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim456_4.png Graph
 ic file (type png)
@@ -2249,7 +2249,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim456_4.png used on input line 345.
 (pdftex.def)             Requested size: 895.42311pt x 505.88875pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789.png, id=237, 897
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789.png, id=252, 897
 .5934pt x 529.7391pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789.png Graphic
  file (type png)
@@ -2259,7 +2259,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim789.png used on input line 360.
 (pdftex.def)             Requested size: 897.5912pt x 529.7378pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_2.png, id=238, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_2.png, id=253, 6
 76.4472pt x 483.4863pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_2.png Graph
 ic file (type png)
@@ -2269,7 +2269,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim789_2.png used on input line 366.
 (pdftex.def)             Requested size: 676.44556pt x 483.4851pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_3.png, id=239, 6
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_3.png, id=254, 6
 76.4472pt x 387.3672pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_3.png Graph
 ic file (type png)
@@ -2279,7 +2279,7 @@ Package pdftex.def Info: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing
 _dim789_3.png used on input line 376.
 (pdftex.def)             Requested size: 676.44556pt x 387.36626pt.
 
-<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_4.png, id=240, 8
+<../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_4.png, id=255, 8
 82.4167pt x 512.3943pt>
 File: ../img/ej1/oja_corrida_200_9/oja_9salida_200ep_testing_dim789_4.png Graph
 ic file (type png)
@@ -2334,8 +2334,8 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 393.
 
-<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123.png, id=25
-5, 873.7443pt x 538.4115pt>
+<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123.png, id=27
+0, 873.7443pt x 538.4115pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123.png G
 raphic file (type png)
 
@@ -2345,7 +2345,7 @@ esting_dim123.png used on input line 399.
 (pdftex.def)             Requested size: 873.74216pt x 538.41019pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_2.png, id=
-256, 673.5564pt x 450.9648pt>
+271, 673.5564pt x 450.9648pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_2.png
  Graphic file (type png)
 
@@ -2355,7 +2355,7 @@ esting_dim123_2.png used on input line 405.
 (pdftex.def)             Requested size: 673.55475pt x 450.96368pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_3.png, id=
-257, 674.2791pt x 380.8629pt>
+272, 674.2791pt x 380.8629pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_3.png
  Graphic file (type png)
 
@@ -2365,7 +2365,7 @@ esting_dim123_3.png used on input line 415.
 (pdftex.def)             Requested size: 674.27745pt x 380.86195pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_4.png, id=
-258, 871.5762pt x 494.3268pt>
+273, 871.5762pt x 494.3268pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim123_4.png
  Graphic file (type png)
 
@@ -2374,8 +2374,8 @@ Package pdftex.def Info: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_t
 esting_dim123_4.png used on input line 421.
 (pdftex.def)             Requested size: 871.57407pt x 494.32558pt.
 
-<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456.png, id=25
-9, 878.0805pt x 544.9158pt>
+<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456.png, id=27
+4, 878.0805pt x 544.9158pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456.png G
 raphic file (type png)
 
@@ -2385,7 +2385,7 @@ esting_dim456.png used on input line 435.
 (pdftex.def)             Requested size: 878.07837pt x 544.91446pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_2.png, id=
-260, 667.7748pt x 481.3182pt>
+275, 667.7748pt x 481.3182pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_2.png
  Graphic file (type png)
 
@@ -2395,7 +2395,7 @@ esting_dim456_2.png used on input line 441.
 (pdftex.def)             Requested size: 667.77316pt x 481.31703pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_3.png, id=
-261, 676.4472pt x 383.031pt>
+276, 676.4472pt x 383.031pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_3.png
  Graphic file (type png)
 
@@ -2405,7 +2405,7 @@ esting_dim456_3.png used on input line 451.
 (pdftex.def)             Requested size: 676.44556pt x 383.03006pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_4.png, id=
-262, 916.3836pt x 563.706pt>
+277, 916.3836pt x 563.706pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_4.png
  Graphic file (type png)
 
@@ -2475,8 +2475,8 @@ Package babel Info: Redefining spanish shorthand "?
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_2.png> <..
 /img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_3.png> <../im
 g/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim456_4.png>]
-<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789.png, id=28
-6, 884.5848pt x 531.9072pt>
+<../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789.png, id=30
+1, 884.5848pt x 531.9072pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789.png G
 raphic file (type png)
 
@@ -2486,7 +2486,7 @@ esting_dim789.png used on input line 473.
 (pdftex.def)             Requested size: 884.58263pt x 531.90588pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_2.png, id=
-287, 667.7748pt x 472.6458pt>
+302, 667.7748pt x 472.6458pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_2.png
  Graphic file (type png)
 
@@ -2496,7 +2496,7 @@ esting_dim789_2.png used on input line 479.
 (pdftex.def)             Requested size: 667.77316pt x 472.64464pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_3.png, id=
-288, 672.111pt x 376.5267pt>
+303, 672.111pt x 376.5267pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_3.png
  Graphic file (type png)
 
@@ -2506,7 +2506,7 @@ esting_dim789_3.png used on input line 489.
 (pdftex.def)             Requested size: 672.10934pt x 376.52577pt.
 
 <../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_4.png, id=
-289, 886.7529pt x 406.8801pt>
+304, 886.7529pt x 406.8801pt>
 File: ../img/ej1/sanger_corrida_200_9/sanger_9salida_200ep_testing_dim789_4.png
  Graphic file (type png)
 
@@ -2569,14 +2569,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 515.
 
-<../img/map_1000ep_850en.png, id=300, 462.528pt x 346.896pt>
+<../img/map_1000ep_850en.png, id=315, 462.528pt x 346.896pt>
 File: ../img/map_1000ep_850en.png Graphic file (type png)
 
 <use ../img/map_1000ep_850en.png>
 Package pdftex.def Info: ../img/map_1000ep_850en.png used on input line 521.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-<../img/map_1000ep_850en_v2.png, id=301, 462.528pt x 346.896pt>
+<../img/map_1000ep_850en_v2.png, id=316, 462.528pt x 346.896pt>
 File: ../img/map_1000ep_850en_v2.png Graphic file (type png)
 
 <use ../img/map_1000ep_850en_v2.png>
@@ -2614,7 +2614,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 538.
 [17 <../img/map_1000ep_850en.png>]
-<../img/map8x8_1000ep_850en.png, id=308, 462.528pt x 346.896pt>
+<../img/map8x8_1000ep_850en.png, id=323, 462.528pt x 346.896pt>
 File: ../img/map8x8_1000ep_850en.png Graphic file (type png)
 
 <use ../img/map8x8_1000ep_850en.png>
@@ -2622,7 +2622,7 @@ Package pdftex.def Info: ../img/map8x8_1000ep_850en.png used on input line 543.
 
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-<../img/map8x8_1000ep_850en_sigma8.png, id=309, 462.528pt x 346.896pt>
+<../img/map8x8_1000ep_850en_sigma8.png, id=324, 462.528pt x 346.896pt>
 File: ../img/map8x8_1000ep_850en_sigma8.png Graphic file (type png)
 
 <use ../img/map8x8_1000ep_850en_sigma8.png>
@@ -2630,7 +2630,7 @@ Package pdftex.def Info: ../img/map8x8_1000ep_850en_sigma8.png used on input li
 ne 549.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-<../img/map8x8_1000ep_850en_sigma8_faseord500.png, id=310, 462.528pt x 346.896p
+<../img/map8x8_1000ep_850en_sigma8_faseord500.png, id=325, 462.528pt x 346.896p
 t>
 File: ../img/map8x8_1000ep_850en_sigma8_faseord500.png Graphic file (type png)
  <use ../img/map8x8_1000ep_850en_sigma8_faseord500.png>
@@ -2638,7 +2638,7 @@ Package pdftex.def Info: ../img/map8x8_1000ep_850en_sigma8_faseord500.png used
 on input line 561.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-<../img/map8x8_1000ep_850en_sigma8_faseord750.png, id=311, 462.528pt x 346.896p
+<../img/map8x8_1000ep_850en_sigma8_faseord750.png, id=326, 462.528pt x 346.896p
 t>
 File: ../img/map8x8_1000ep_850en_sigma8_faseord750.png Graphic file (type png)
  <use ../img/map8x8_1000ep_850en_sigma8_faseord750.png>
@@ -2646,7 +2646,7 @@ Package pdftex.def Info: ../img/map8x8_1000ep_850en_sigma8_faseord750.png used
 on input line 567.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-<../img/map7x7_1000ep_850en_sigma7_faseord750.png, id=312, 462.528pt x 346.896p
+<../img/map7x7_1000ep_850en_sigma7_faseord750.png, id=327, 462.528pt x 346.896p
 t>
 File: ../img/map7x7_1000ep_850en_sigma7_faseord750.png Graphic file (type png)
  <use ../img/map7x7_1000ep_850en_sigma7_faseord750.png>
@@ -2654,7 +2654,7 @@ Package pdftex.def Info: ../img/map7x7_1000ep_850en_sigma7_faseord750.png used
 on input line 577.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
-<../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png, id=313, 462.528pt 
+<../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png, id=328, 462.528pt 
 x 346.896pt>
 File: ../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png Graphic file (
 type png)
@@ -2720,7 +2720,7 @@ Package babel Info: Redefining spanish shorthand "?
  [19 <../img/map8x8_1000ep_850en_sigma8_faseord500.png> <../img/map8x8_1000ep_8
 50en_sigma8_faseord750.png> <../img/map7x7_1000ep_850en_sigma7_faseord750.png>]
 
-<../img/map7x7_1000ep_850en_sigma7_faseord750_corregido_errores.png, id=333, 46
+<../img/map7x7_1000ep_850en_sigma7_faseord750_corregido_errores.png, id=348, 46
 2.528pt x 346.896pt>
 File: ../img/map7x7_1000ep_850en_sigma7_faseord750_corregido_errores.png Graphi
 c file (type png)
@@ -2729,59 +2729,154 @@ c file (type png)
 Package pdftex.def Info: ../img/map7x7_1000ep_850en_sigma7_faseord750_corregido
 _errores.png used on input line 597.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-LaTeX Info: Redefining \. on input line 602.
-LaTeX Info: Redefining \% on input line 602.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 606.
+LaTeX Info: Redefining \. on input line 609.
+LaTeX Info: Redefining \% on input line 609.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 602.
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 609.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 609.
 
 [20 <../img/map7x7_1000ep_850en_sigma7_faseord750_corregido.png> <../img/map7x7
 _1000ep_850en_sigma7_faseord750_corregido_errores.png>]
+LaTeX Info: Redefining \. on input line 616.
+LaTeX Info: Redefining \% on input line 616.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 603.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 658.
+(babel)             in language  on input line 616.
+ [21]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 617.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 617.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 617.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 617.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 617.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 617.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 619.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 619.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 640.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 640.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 640.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 640.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 640.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 640.
+LaTeX Info: Redefining \. on input line 660.
+LaTeX Info: Redefining \% on input line 660.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 660.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 660.
+[22]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 661.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 661.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 661.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 661.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 661.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 661.
 )
 LaTeX Info: Redefining \. on input line 77.
 LaTeX Info: Redefining \% on input line 77.
@@ -2809,7 +2904,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 77.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 77.
- [21]
+ [23]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
  (./informe.aux
@@ -2819,7 +2914,7 @@ LaTeX Info: Redefining \% on input line 23.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: E076464AB697A5A5EBF9AA3D994321AE;1314.
+(rerunfilecheck)             Checksum: 03A06DFE3D55BE34C18101191030834A;1569.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2827,10 +2922,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 13819 strings out of 494883
- 209795 string characters out of 6179094
- 325226 words of memory out of 5000000
- 16785 multiletter control sequences out of 15000+600000
+ 13828 strings out of 494883
+ 209951 string characters out of 6179094
+ 325232 words of memory out of 5000000
+ 16789 multiletter control sequences out of 15000+600000
  9534 words of font info for 36 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  41i,13n,43p,683b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2847,10 +2942,10 @@ c/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on informe.pdf (21 pages, 8504488 bytes).
+Output written on informe.pdf (23 pages, 8452366 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 437 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 433 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 461 words of extra memory for PDF output out of 10000 (max. 10000000)
 

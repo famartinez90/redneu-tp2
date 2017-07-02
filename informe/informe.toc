@@ -14,5 +14,8 @@
 \contentsline {subsubsection}{\numberline {2.1.4}Regla de Sanger - Variando n\IeC {\'u}mero de dimensiones}{14}{subsubsection.2.1.4}
 \contentsline {subsection}{\numberline {2.2}Ejercicio 2 - Mapeo de caracter\IeC {\'\i }sticas}{17}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Mapeo de documentos con 850 atributos}{17}{subsubsection.2.2.1}
-\contentsline {section}{\numberline {3}Soluciones \IeC {\'O}ptimas Propuestas}{21}{section.3}
-\contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{21}{section.4}
+\contentsline {subsubsection}{\numberline {2.2.2}Mapeo de documentos con 3 componentes principales}{21}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}Respuestas a preguntas del enunciado}{22}{section.3}
+\contentsline {subsubsection}{\numberline {3.0.1}Ejercicio 1}{22}{subsubsection.3.0.1}
+\contentsline {subsubsection}{\numberline {3.0.2}Ejercicio 2}{22}{subsubsection.3.0.2}
+\contentsline {section}{\numberline {4}Conclusi\IeC {\'o}n}{23}{section.4}
