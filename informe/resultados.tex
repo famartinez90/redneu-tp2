@@ -685,61 +685,75 @@ Estos resultados nos indican que tomar como entrada menor cantidad de componente
 El tiempo de ejecución total con 9 componentes fue de: ~721 segundos. Observando los tiempos obtenidos en los experimentos anteriores, no se nota un descenso notable de la performance utilizando menos componentes.
 
 \newpage
-\section{Soluciones Óptimas Propuestas}
+\section{Respuestas a preguntas del enunciado}
 
-% Siguiendo las distintas conclusiones que fuimos formando a través de los experimentos, generamos una solución óptima para cada ejercicio del TP. Estas soluciones se encuentran codificadas en \textbf{solucion\_ej1.json} y \textbf{solucion\_ej2.json}.
+\subsubsection{Ejercicio 1}
 
-% \subsection{Ejercicio 1}
-% La solución del ejercicio 1 fue generada con los siguientes parámetros:
+\begin{itemize}
 
-% \texttt{\$python script.py 1 -ep=250 -capas=10,10 -eta=0.05 -estop=0.1}
+\item \textbf{¿Qué interpretación le puede dar a estos resultados?} 
 
-% La solución generó muy buenos resultados, obteniendo 94\% de efectividad con respecto a su dataset de testing.
-% Con respecto al error final, así fue su evolución:
+\item \textbf{¿Qué tan buenos son estos modelos específicos para hacer una clasificación de los documentos?}
 
-% \begin{figure}[h]
-%   \begin{center}
-%   \includegraphics[scale=0.50]{graficos/solucion_ej1.png}
-%   \caption{Evolución del error a través del entrenamiento para la solución 1}
-%   \end{center}
-% \end{figure}
+Ambos modelos lograron de alguna forma clusterizar los documentos y de ésta manera se pueden diferenciar ciertas áreas del espacio
+donde documentos de misma categoría se agrupan. Sanger dio mejores resultados que Oja, y teniendo en cuenta que las áreas en Sanger
+están mucho mejor definidas, se podría decir que la clasificación de documentos es bastante buena, e incluso podría mejorar aumentando
+las épocas de entrenamiento (si tuviésemos el poder de cómputo adecuado, dado que demora bastante tiempo).
 
-% Notamos que encontró valores muy bajos de error, con una curva bastante pronunciada a partir de la época 50. Observamos que el early stopping efectivamente entró en efecto, ya que cortó la ejecución antes de llegar al límite de épocas.\\
+\item \textbf{¿Cómo los utilizaría?}
 
-% En caso de querer cargar y probar esta red, ejecutar:
+Una vez que la red está entrenada, podemmos delimitar áreas en el espacio que corresponden a cada categoría. Luego, para nuevos documentos
+(o cualquier otro tipo de información que queramos categorizar), solo debemos ver en que área se ubica con sus componentes principales a partir de
+eso podemos concluir cual es su categoría con un nivel de precisión bastante bueno que nos da el algoritmo de Sanger.
 
-% \texttt{\$python script.py 1 -file=F -rda=solucion\_ej1.json -te=100 }
+\end{itemize}
 
-% donde \texttt{F} debe ser el path al archivo CSV que contenga el dataset seleccionado. El parámetro $te=100$ implica que se le ordena a la red predecir todos los resultados del dataset como testing y calcular su tasa de aciertos.
+\subsubsection{Ejercicio 2}
 
-% \subsection{Ejercicio 2}
-% La solución del ejercicio 2 fue generada con los siguientes parámetros:
+\begin{itemize}
 
-% \texttt{\$python script.py 2 -ep=250 -capas=7 -estop=0.05}
+\item \textbf{¿Qué interpretación puede darle a los resultados obtenidos?} 
 
-% La solución generó resultados decentes, obteniendo 74\% de efectividad con respecto a su dataset de testing.\\
-% Se nota una eficiencia menor a la de la solución del ejercicio 1.
-% En la última figura podemos ver la evolución de las épocas y el error:
+\item \textbf{¿Cómo se comparan estos resultados con los obtenidos anteriormente?}
 
-% \begin{figure}[h]
-%   \begin{center}
-%   \includegraphics[scale=0.50]{graficos/solucion_ej2.png}
-%   \caption{Evolución del error a través del entrenamiento para la solución 2}
-%   \end{center}
-% \end{figure}
+\item \textbf{¿Cuál es la arquitectura de red y parámetros de entrenamiento que utilizaría?}
 
-% \newpage
+Luego de toda la experimentación realizadas, concluimos que la mejor configuración para realizar el entrenamiento de 
+la red es la siguiente:
 
-% Notamos en este caso un descenso más lento del error y un estancamiento final en la curva. No se llegó a aplicar la cláusula del early stopping.
+\begin{itemize}
+\item Tamaño de mapa de neuronas: 7 x 7
+\item Sigma inicial: 7
+\item Eta inicial: 0.1
+\item Épocas totales: 1000
+\item Duración ordenamiento: 750 épocas
+\item Duración convergencia: 250 épocas
+\item Tipos de datos de entrada: datos en bruto (850 atributos por documento)
+\end{itemize}
 
+\item \textbf{¿Qué resultados esperaría obtener con datos de testeo con los que el modelo no fue entrenado?}
 
-% En caso de querer cargar y probar esta red, ejecutar:
+Dado que seleccionamos solo el 90\% del conjunto de documentos para hacer el entrenamiento, el otro 10\% restante no fue utilizado 
+para entrenar el modelo, y dado que lo utilizamos para calcular el error de categorización del mismo contra la red ya entrenada, 
+podemos responder esta pregunta diciendo que se esperaría, que la categorización de estos datos de testeo sea correcta en el 
+~97\% de los casos (realizamos experimentos en donde hemos encontrado 1 o 2 errores como máximo luego del entrenamiento, pero la 
+mayoría de las veces ninguno).
 
-% \texttt{\$python script.py 2 -file=F -rda=solucion\_ej2.json -te=100 }
+\item \textbf{¿Hubo diferencia en el tiempo de entrenamiento utilizando los datos de dimensión reducida?}
 
-% donde \texttt{F} debe ser el path al archivo CSV que contenga el dataset seleccionado.
+Sí la hubo, aunque fue bastante reducida, 30 segundos más rápido usar 9 componentes principales contra los 850 atributos, y 70 segundos 
+más rápido usar 3 componentes contra los 850 atributos. 
 
-% \newpage
+\item \textbf{¿Y en la calidad del resultado?}
+
+En la calidad del resultado, por el contrario, tomar las componentes principales dio resultados muy pobres comparado con 
+tomar los 850 atributos de cada documento. Si bien con 3 y 9 componentes principales el mapeo tiene una noción de clusterización,
+la cantidad de errores de categorización del conjunto de validación llega a estar por encima del 35\%, lo cual es bastante malo y
+resulta en una categorización en la que no se puede confiar. 
+
+\end{itemize}
+
+\newpage
 \section{Conclusión}
 
 % Como conclusión podemos ver que los distintos ejercicios y sus características obtuvieron diferentes resultados en los experimentos realizados.\\

@@ -7,7 +7,7 @@ def iniciar():
 
     parser.add_argument("-file", "--filepath", default='tp2_training_dataset.csv', help='Ubicacion del archivo con los datasets a procesar')
     parser.add_argument("-ep", "--epochs", default=200, help='Cantidad de epocas. Default = 500')
-    parser.add_argument("-eta", "--eta", default=0.01, help='Tasa de aprendizaje. Default = 0.05')
+    parser.add_argument("-eta", "--eta", default=0.1, help='Tasa de aprendizaje. Default = 0.05')
 
     parser.add_argument("-rda", "--red_desde_archivo", default=None,
                         help='Permite elegir una red ya entrenada. Las redes estan almacenadas en archivos.'
