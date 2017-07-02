@@ -773,7 +773,13 @@ resulta en una categorización en la que no se puede confiar.
 
 \section{Conclusión}
 
-En toda nuestra experimentación, la selección de datos de entrenamiento y validación es totalmente aleatoria, con lo cual podrían haber
+Si bien durante la realización de los experimentos y las respuestas a las preguntas del enunciado realizamos bastantes conclusiones, queríamos cerrar 
+con que, dada las pruebas y los resultados obtenidos, creemos que tanto la determinación de componentes principales de Oja y Sanger, como los mapas 
+autoorganizados son maneras muy efectivas de entrenar redes para categorizar nueva información, siempre y cuando se tenga una buena base de entrenamiento. 
+Si tuviésemos que quedarnos con una, elegiríamos la de los mapas autoorganizados, ya que es la más rápida para entrenar con los datos en bruto (los documentos
+con 850-dimensionalidad) y además, la que más fácil nos permite concluir a que categoría pertenece cada documento nuevo que queramos categorizar.
+
+Además, queríamos notar que en toda nuestra experimentación, la selección de datos de entrenamiento y validación es totalmente aleatoria, con lo cual podrían haber
 mejores opciones de selección. No llegamos a probarlo, pero creemos que tomar una cantidad equivalente de documentos de cada categoría, 
 tanto para entrenamiento como validación, nos debería proporcionar mejores resultados y categorización, dado que podría suceder que, 
 si en el conjunto de entrenamiento no hay suficientes documentos de alguna categoría, esa categoría podría ser mal categorizada luego al
