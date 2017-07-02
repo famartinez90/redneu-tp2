@@ -622,6 +622,9 @@ Tiempo de corrida 3comp: ~680 segundos
 
 \item \textbf{¿Qué interpretación le puede dar a estos resultados?} 
 
+Lo que podemos interpretar es que tanto el algoritmo de Oja como el de Sanger, logran realizar una clusterización de los documentos según 
+su categoría, entrenándose sin saber a priori la categoría de cada documento. 
+
 \item \textbf{¿Qué tan buenos son estos modelos específicos para hacer una clasificación de los documentos?}
 
 Ambos modelos lograron de alguna forma clusterizar los documentos y de ésta manera se pueden diferenciar ciertas áreas del espacio
@@ -685,18 +688,8 @@ resulta en una categorización en la que no se puede confiar.
 \newpage
 \section{Conclusión}
 
-% Como conclusión podemos ver que los distintos ejercicios y sus características obtuvieron diferentes resultados en los experimentos realizados.\\
-
-% Notamos en ellos algunos fenómenos. En primer lugar, parecería que la cantidad óptima de neuronas en cada capa se acerca a la cantidad de atributos a procesar por la red. Esto se pudo observar en el experimento de cantidad de neuronas para cada ejercicios.\\
-% En segundo lugar, apreciamos distintos efectos en la cantidad de épocas necesarias para llegar a buenos resultados. Cada ejercicio necesitó una cantidad diferente y muchos de los parámetros afectaron dicha cantidad, aumentándola ampliamente en varios casos.\\
-
-% Algunos parámetros que pensamos que tendrían mayor efecto en los resultados fueron los de distribución de los pesos, momentum y en el caso del ejercicio 2, cantidad de capas. Nos sorprendió que finalmente la solución óptima no utilizara más estos factores.\\
-
-% Aprendimos que parámetros como el early stopping, que de antemano parecía que si o si debería estar en nuestra solución, no nos dió resultados lo suficiente buenos 
-% como para considerarlo como algo obligatorio a la hora de entrenar la red. Quizás esto fue porque la cantidad de épocas de nuestro entrenamiento no era la suficiente 
-% como vimos anteriormente, y este relacionado también con que nuestro conjunto de datos es acotado, nuestra red pequeña y no se necesitan tantas épocas para entrenar.
-
-% Vimos también que los parámetros adaptativos, como el learning rate, mejoran considerablemente soluciones como el entrenamiento batch o mini batch. Incluso, en el 
-% entrenamiento batch, se puede llegar a conseguir una soluciones muy buenas si las épocas son suficientes con learning rate adaptativo.
-
-% Finalmente observamos la naturaleza práctica de este tipo de problemas, en la cual muchos de las decisiones responden a experimentación y pruebas y no tanto a fundamentos teóricos o conceptuales.
+En toda nuestra experimentación, la selección de datos de entrenamiento y validación es totalmente aleatoria, con lo cual podrían haber
+mejores opciones de selección. No llegamos a probarlo, pero creemos que tomar una cantidad equivalente de documentos de cada categoría, 
+tanto para entrenamiento como validación, nos debería proporcionar mejores resultados y categorización, dado que podría suceder que, 
+si en el conjunto de entrenamiento no hay suficientes documentos de alguna categoría, esa categoría podría ser mal categorizada luego al
+introducir nuevos datos.
